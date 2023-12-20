@@ -1,0 +1,23 @@
+{
+    "files": [
+        {
+            "myComment": "To jest pojedyncza strona, czyli page 0",
+            "page": [
+                {
+                    "header": "Java pliki",
+                    "description": "Obsługa plików jest istotną częścią każdej aplikacji",
+                    "code": "",
+                    "output": "",
+                    "codeDescription": ""
+                },
+                {
+                    "header": "Obsługa plików w Javie",
+                    "description": "Klasa {File} z pakietu {java.io} umożliwia pracę z plikami.\nŻeby korzystać klasy {File} utwórz obiekt klasy określając nazwę pliku lub katalogu.",
+                    "code": "import java.io.File;\n\npublic class Main {\n  public static void main(String[] args) {\n    File myObj = new File(\"filename.txt\");\n  }\n}",
+                    "output": "",
+                    "codeDescription": "Nauczysz się jak utworzyć, zapisać, odczytać lub usunąć plik dalej w tym rozdziale"
+                }
+            ]
+        }
+    ]
+}

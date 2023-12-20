@@ -1,0 +1,30 @@
+{
+    "methods": [
+        {
+            "myComment": "To jest pojedyncza strona, czyli page 0",
+            "page" : [
+                {
+                    "header" : "Metody",
+                    "description": "Metoda jest fragmentem kodu, który wykonuje się, gdy się go wywoła.\nDo metody możesz przekazać dane znane jako parametry.\nMetody są używane do wykonywania określonych działań i są też znane jako funkcje.\nPo co używać metod? Zdefiniowany w metodzie kod możesz używać wiele razy.",
+                    "code": "",
+                    "output": "",
+                    "codeDescription": ""
+                },
+                {
+                    "header" : "Tworzenie metody",
+                    "description": "Metoda musi zostać zdefiniowana wewnątrz klasy. Jest ona zdefiniowana za pomocą nazwy metody, po której następują nawiasy {()}. Java zapewnia parę zdefiniowanych metod np. {System.out.println()}. Możesz też samodzielnie stworzyć metody do wykonania określonych działań",
+                    "code": "public class Main {\n  static void myMethod() {\n    // code to be executed;\n  }\n}",
+                    "output": "",
+                    "codeDescription": "{myMethod()} to nazwa metody.\n{static} oznacza, że należy do klasy Main, a nie do obiektu Main. Dowiesz się o tym więcej w dalszych rozdziałach.\n{void} oznacza, że metoda nic nie zwraca. O wartościach zwracanych dowiesz się więcej dalej w tym rozdziale."
+                },
+                {
+                    "header" : "Wywołanie metody",
+                    "description": "Żeby wywołać metodę w Javie, napisz nazwę metody wraz z nawiasami {()} i średnikiem {;}",
+                    "code": "public class Main {\n  static void myMethod() {\n    System.out.println(\"Hello World!\");\n  }\n  public static void main(String[] args) {\n    myMethod();\n    myMethod();\n    myMethod();\n  }\n}",
+                    "output": "Hello World!\nHello World!\nHello World!",
+                    "codeDescription": "{myMethod()} używany jest do wyświetlenia tekstu."
+                }
+            ]
+        }
+    ]
+}

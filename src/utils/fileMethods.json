@@ -1,0 +1,52 @@
+[
+    {
+      "method": "canRead()",
+      "type": "Boolean",
+      "description": "Sprawdza czy plik może zostać odczytany"
+    },
+    {
+      "method": "canWrite()",
+      "type": "Boolean",
+      "description": "Sprawdza czy plik jest zapisywalny"
+    },
+    {
+      "method": "createNewFile()",
+      "type": "Boolean",
+      "description": "Tworzy nowy pusty plik"
+    },
+    {
+      "method": "delete()",
+      "type": "Boolean",
+      "description": "Usuwa plik"
+    },
+    {
+      "method": "exists()",
+      "type": "Boolean",
+      "description": "Sprawdza czy plik istnieje"
+    },
+    {
+      "method": "getName()",
+      "type": "String",
+      "description": "Zwraca nazwę pliku"
+    },
+    {
+      "method": "getAbsolutePath()",
+      "type": "String",
+      "description": "Zwraca pełną scieżkę pliku"
+    },
+    {
+      "method": "length()",
+      "type": "Long",
+      "description": "Zwraca rozmiar pliku w bajtach"
+    },
+    {
+      "method": "list()",
+      "type": "String[]",
+      "description": "Zwraca listę plików w katalogu"
+    },
+    {
+      "method": "mkdir()",
+      "type": "Boolean",
+      "description": "Tworzy katalog"
+    }
+  ]

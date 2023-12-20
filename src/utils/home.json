@@ -1,0 +1,18 @@
+{
+    "page": [
+        {
+            "header": "StartJava",
+            "description": "Java jest jednym z najpopularniejszych języków programowania.\nJava jest używana do tworzenia aplikacji mobilnych, internetowych, komputerowych i wiele więcej.",
+            "code": "",
+            "output": "",
+            "codeDescription": ""
+        },
+        {
+            "header": "Przykłady w każdym dziale",
+            "description": "W każdym dziale znajdziesz przykłady prezentujące dane zagadnienie. Do tego dołączony będzie wynik z konsoli wraz z wyjaśnieniem.",
+            "code": "public class Main {\n  public static void main(String[] args) {\n    System.out.println(\"Hello World\");\n  }\n}",
+            "output": "Hello World",
+            "codeDescription": "Metoda {System.out.println()} wyświetla na konsoli tekst, a kursor zaczyna wyświetlanie od nowej linii."
+        }
+    ]
+}

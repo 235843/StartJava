@@ -1,0 +1,23 @@
+{
+    "classes" : [
+        {
+            "myComment": "To jest pojedyncza strona, czyli page 0",
+            "page": [
+                {
+                    "header": "Java OOP",
+                    "description": "{OOP} oznacza {Object-Oriented Programming}.\nProgramowanie proceduralne polega na pisaniu procedur lub metod, które wykonują operacje na danych, podczas gdy programowanie obiektowe polega na tworzeniu obiektów, które zawierają zarówno dane, jak i metody.\nOOP ma kilka zalet nad programowaniem proceduralnym:\n -OOP jest łatwiejszy i szybszy do wykonania\n -OOP zapewnia czystą strukturę programu\n -OOP pomaga utrzymać kod Javy {DRY (Don't Repeat Yourself)} i sprawia, że kod jest łatwiejszy w zarządzaniu, modifikowaniu i debugowaniu\n -OOP umożliwia w pełni używalną aplikację z mniejszą ilością kodu i krótszym czasem produkcji\nDRY: Zasada polega na ograniczeniu powtarzania kodu. Powinieneś wyodrębnić kody, które są wspólne dla aplikacji i umieścić je w jednym miejscu i ponownie wykorzystać zamiast powtarzać.",
+                    "code": "",
+                    "output": "",
+                    "codeDescription": ""
+                },
+                {
+                    "header": "Czym są klasy i obiekty w Javie?",
+                    "description": "Klasy i obiekty są głownymi aspektami OOP.\nKlasa jest szablonem obiektu, a obiekt jest instancją klasy.\nGdy tworzone są poszczególne obiekty, dziedziczą one wszystkie zmienne i metody z klasy.\nSpójrz na poniższą ilustrację, żeby zobaczyć różnicę między klasą i obiektem.",
+                    "code": "",
+                    "output": "",
+                    "codeDescription": ""
+                }
+            ]
+        }
+    ]
+}

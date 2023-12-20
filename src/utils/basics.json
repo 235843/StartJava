@@ -1,0 +1,23 @@
+{
+    "basics": [
+        {
+            "myComment": "To jest pojedyncza strona, czyli page 0",
+            "page": [
+                {
+                    "header": "Czym jest Java?",
+                    "description": "Java jest popularnym językiem programowania utworzonym w 1995.\nJava utworzyło Oracle i ponad 3 miliardy urządzeń korzysta z Javy.\nKorzysta się z niej w:\n -Aplikacjach mobilnych\n -Aplikacjach komputerowych\n -Aplikacjach internetowych\n -Serwerach internetowych i serwerach aplikacji\n -Grach\n -Połączeniach z bazami danych\n -I wiele, wiele więcej",
+                    "code": "",
+                    "output": "",
+                    "codeDescription": ""
+                },
+                {
+                    "header": "Po co korzystać z Javy?",
+                    "description": " -Java działa na różnych platformach(Windows, Linux, Mac, Raspberry Pi, etc.)\n -Jest jednym z najpopularniejszych języków programowania na świecie\n -Jest duże zapotrzebowanie na aktualnym rynku pracy\n -Jest prosty w użyciu i łatwy w nauce\n -Jest darmowa i open-source\n -Jest bezpieczna i szybka\n -Posiada dużą społeczność, więc łatwo znaleźć pomoc wśród niej\n -Jest językiem obiektowym, więc zapewnia czystość kodu i mniejsze koszta opracowania\n -Java jest zbliżona do C++ i C#, więc ułatwia programistom przejście na Javę i odwrotnie",
+                    "code": "",
+                    "output": "",
+                    "codeDescription": ""
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,28 @@
+import { useQuery, useQueryClient } from "@tanstack/react-query";
+import {
+  createContext,
+  ReactElement,
+  ReactNode,
+  useContext,
+  useMemo,
+} from "react";
+
+export const urlBase = "http://localhost:8080";
+
+export type AuthValue = {
+    email: string;
+    password: string;
+  };
+  
+  export type RegistrationArgs = {
+    date?: string;
+    email: string;
+    password: string;
+    privacyPolicy?: boolean;
+    name: string;
+  };
+  
+  export type AnonService = {
+    signIn: (value: AuthValue) => Promise<void>;
+    signUp: (values: RegistrationArgs) => Promise<void>;
+  };
