@@ -1,5 +1,5 @@
 import React from 'react'
-import { useParams } from 'react-router-dom'
+import { useLocation } from 'react-router-dom'
 import data from '../utils/classes.json'
 import Navbar from '../Components/Navbar';
 import Sidebar from '../Components/Sidebar';
@@ -11,7 +11,14 @@ import InformationComponent from '../Components/InformationComponent';
 import OOPComponent from '../Components/OOPComponent';
 
 export default function ClassesPage(){
-  const {id=0} = useParams();
+  const location = useLocation();
+  const searchParams = new URLSearchParams(location.search);
+  let urlId = searchParams.get('id');
+
+  if (!urlId) {
+    urlId = '0'
+  }
+  const id = parseInt(urlId, 10);
 
   const loadData = JSON.parse(JSON.stringify(data))
   const body = loadData.classes[id];
@@ -22,6 +29,7 @@ export default function ClassesPage(){
       <Flex w='95%'  position= 'absolute' marginLeft="20px" >
         <Sidebar/>
         <Box borderWidth="1px" borderRadius="lg" p="6" m="4" minWidth="85%" >
+          <SwitchPageButtonsComponent path={paths.classes} id={id} />
             {body.page.map(elem  => 
             <>
                 <HeaderComponent title={elem.header} description={elem.description} />

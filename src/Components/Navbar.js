@@ -46,6 +46,7 @@ export default function Navbar() {
             {authenticated ? 
               <button onClick={() => {
                 localStorage.removeItem("authorization");
+                localStorage.removeItem("role");
                 setAuthenticated(false);
                 toastIdRef.current = toast({ 
                   title: 'Wylogowano',
@@ -53,7 +54,7 @@ export default function Navbar() {
                   status: 'info',
                   duration: 9000,
                   isClosable: true
-              })
+                })
               }}>{logout}</button> :
               <NavLink to={paths.signIn}>{CTA}</NavLink> 
             }

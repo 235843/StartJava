@@ -1,5 +1,5 @@
 import React from 'react'
-import { json, useParams } from 'react-router-dom'
+import { json, useLocation } from 'react-router-dom'
 import data from '../utils/basics.json'
 import Navbar from '../Components/Navbar';
 import Sidebar from '../Components/Sidebar';
@@ -8,12 +8,22 @@ import HeaderComponent from '../Components/HeaderComponent';
 import CodeSampleComponent from '../Components/CodeSampleComponent';
 import OutputComponent from '../Components/OutputComponent';
 import InformationComponent from '../Components/InformationComponent';
+import { paths } from '../utils/paths';
+import SwitchPageButtonsComponent from '../Components/SwitchPageButtonsComponent';
 
 export default function BasicsPage(){
-  const {id=0} = useParams();
+  const location = useLocation();
+  const searchParams = new URLSearchParams(location.search);
+  let urlId = searchParams.get('id');
 
+  if (!urlId) {
+    urlId = '0'
+  }
+  const id = parseInt(urlId, 10);
+  
   const loadData = JSON.parse(JSON.stringify(data))
   const body = loadData.basics[id];
+
 
   return (
     <React.StrictMode>
@@ -22,6 +32,7 @@ export default function BasicsPage(){
       <Flex w='95%'  position= 'absolute' marginLeft="20px" >
         <Sidebar/>
         <Box borderWidth="1px" borderRadius="lg" p="6" m="4" minWidth="85%">
+          <SwitchPageButtonsComponent path={paths.basics} id={id} />
             {body.page.map(elem  => 
             <>
                 <HeaderComponent title={elem.header} description={elem.description} />
@@ -33,9 +44,6 @@ export default function BasicsPage(){
             </>
             )}
         </Box>
-        
-
-       
       </Flex>
     </React.StrictMode>
   )

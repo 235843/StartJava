@@ -8,6 +8,7 @@ import BasicsPage from '../Views/BasicsPage'
 import MethodsPage from '../Views/MethodsPage'
 import ClassesPage from '../Views/ClassesPage'
 import FilePage from '../Views/FilePage'
+import TestsPage from '../Views/TestsPage'
 
 const Router = () => {
   return (
@@ -54,6 +55,13 @@ const Router = () => {
             </Suspense>
           }
           path={paths.files}/>
+
+          <Route element={
+             <Suspense fallback={null}>
+               <TestsPage/>
+             </Suspense>
+           }
+           path={paths.tests}/>
       </Routes>
     </BrowserRouter>
     </>

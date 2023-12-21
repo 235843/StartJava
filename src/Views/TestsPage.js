@@ -1,6 +1,6 @@
 import React from 'react'
-import { json, useLocation } from 'react-router-dom'
-import data from '../utils/methods.json'
+import { json, useParams } from 'react-router-dom'
+import data from '../utils/basics.json'
 import Navbar from '../Components/Navbar';
 import Sidebar from '../Components/Sidebar';
 import { Box, Divider, Flex } from '@chakra-ui/react';
@@ -9,18 +9,11 @@ import CodeSampleComponent from '../Components/CodeSampleComponent';
 import OutputComponent from '../Components/OutputComponent';
 import InformationComponent from '../Components/InformationComponent';
 
-export default function MethodsPage() {
-  const location = useLocation();
-  const searchParams = new URLSearchParams(location.search);
-  let urlId = searchParams.get('id');
-
-  if (!urlId) {
-    urlId = '0'
-  }
-  const id = parseInt(urlId, 10);
+export default function TestsPage(){
+  const {id=0} = useParams();
 
   const loadData = JSON.parse(JSON.stringify(data))
-  const body = loadData.methods[id];
+  const body = loadData.basics[id];
 
   return (
     <React.StrictMode>
@@ -28,8 +21,7 @@ export default function MethodsPage() {
         
       <Flex w='95%'  position= 'absolute' marginLeft="20px" >
         <Sidebar/>
-        <Box borderWidth="1px" borderRadius="lg" p="6" m="4" minWidth="85%" >
-          <SwitchPageButtonsComponent path={paths.methods} id={id} />
+        <Box borderWidth="1px" borderRadius="lg" p="6" m="4" minWidth="85%">
             {body.page.map(elem  => 
             <>
                 <HeaderComponent title={elem.header} description={elem.description} />
@@ -41,9 +33,6 @@ export default function MethodsPage() {
             </>
             )}
         </Box>
-        
-
-       
       </Flex>
     </React.StrictMode>
   )
