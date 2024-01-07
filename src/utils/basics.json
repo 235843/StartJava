@@ -18,6 +18,378 @@
                     "codeDescription": ""
                 }
             ]
+        },
+        {
+            "page": [
+                {
+                    "header": "Szybki start",
+                    "description": "W Javie każda aplikacja zaczyna się nazwą klasy. Klasa ta musi znajdować się w pliku o tej samej nazwie.\nStwórzmy pierwszy plik Javy o nazwie Main.java, w którym zawrzemy wiadomość \"Hello World!\".",
+                    "code": "public class Main {\n  public static void main(String[] args) {\n    System.out.println(\"Hello World!\");\n  }\n}",
+                    "output": "Hello World!",
+                    "codeDescription": "Każda linia kodu napisana w Javie musi znajdować się wewnątrz {klasy}. W naszym przykładzie klasę nazwaliśmy {Main}. Nazwa klasy zawsze powinna zaczynać się z dużej litery.\nW Javie wielkość liter ma znaczenie, czyli {\"MyClass\"} i {\"myclass\"} ma różne znaczenie.\nZapisując plik Javy nazwij go tak samo jak klasę i dodaj na koniec rozszerzenie {.java}."
+                },
+                {
+                    "header": "Metoda main",
+                    "description": "Metoda {main()} jest wymagana i znajduje się w każdym programie napisanym w Javie.\nKażda linia kodu napisana w tej metodzie zostanie wykonana.",
+                    "code": "public static void main(String[] args)",
+                    "output": "",
+                    "codeDescription": "Nie martw się słowami przed i po {main()}, będziesz się o nich dowiadywać czytając dalej ten kurs.\nNa razie pamiętaj tylko, że każdy program w Javie ma nazwę klasy, która musi odpowiadać nazwie pliku i że każdy program musi zawierać metodę {main()}."
+                },
+                {
+                    "header": "System.out.println()",
+                    "description": "W metodzie {main()} możemy użyć metody {println()}, aby wyświetlić tekst na ekranie",
+                    "code": "public static void main(String[] args) {\n  System.out.println(\"Hello World!\");\n}",
+                    "output": "",
+                    "codeDescription": "Klamry oznaczają początek i koniec bloku kodu.\n{System} jest wbudowaną w Javę klasą, która zawiera przydatne elementy jak na przykład {out} (skrót od {output}). Metoda {println()} (skrót od {print line}) jest stosowana do wyświetlania wartości na ekranie.\nPowinieneś zapamiętać, że każda instrukcja kodu musi kończyć się średnikiem \"{;}s\""
+                }
+            ]
+        },
+        {
+            "page": [
+                {
+                    "header": "Java wyświetlanie tekstu",
+                    "description": "W poprzednim rozdziale nauczyłeś się, że używając metody {println()}, aby wyświetlić wartość lub tekst.\nDo swojego programu możesz dodać {println()} tyle ile chcesz. Pamiętaj, że ta metoda dodaje nową linię co każde wywołanie.",
+                    "code": "System.out.println(\"Hello World!\");\nSystem.out.println(\"Uczę się Javy\");\nSystem.out.println(\"Jest Super!\");",
+                    "output": "Hello World!\nUczę się Javy\nJest Super!",
+                    "codeDescription": ""
+                },
+                {
+                    "header": "Cudzysłów",
+                    "description": "Kiedy pracujesz z tekstem, musi być on w cudzysłowiu. Bez tego wystąpi błąd.",
+                    "code": "System.out.println(\"To zadziała\");\n\nSystem.out.println(To wywoła błąd);",
+                    "output": "",
+                    "codeDescription": ""
+                },
+                {
+                    "header": "Metoda print()",
+                    "description": "Podobną do metody {println()} jest metoda {print()}.\nJedyną różnica jest to, że metoda {print()} nie wstawia nowej linii na końcu.",
+                    "code": "System.out.print(\"To się wyświetli \");\nSystem.out.print(\"w tej samej linii.\");",
+                    "output": "To się wyświetli w tej samej linii.",
+                    "codeDescription": ""
+                }
+                
+            ]
+        },
+        {
+            "page": [
+                {
+                    "header": "Wyświetlanie liczb",
+                    "description": "Metody {println()} możesz też użyć do wyświetlenia liczb",
+                    "code": "System.out.println(3);\nSystem.out.println(358);\nSystem.out.println(50000);",
+                    "output": "3\n358\n50000",
+                    "codeDescription": ""
+                },
+                {
+                    "header": " ",
+                    "description": "Obliczenia matematyczne można także wykonywać za pomocą metody {println()}",
+                    "code": "System.out.println(3 + 3);\n\nSystem.out.println(2 * 5);",
+                    "output": "6\n10",
+                    "codeDescription": ""
+                }
+                
+            ]
+        },
+        {
+            "page": [
+                {
+                    "header": "Komentarze w Javie",
+                    "description": "Komentarze stosuje się, aby wyjaśnić napisany kod i zwiększyć jego czytelność. Można zakomentować kod, żeby zapobiec wykonaniu podczas testowania kodu alternatywnego.",
+                    "code": "",
+                    "output": "",
+                    "codeDescription": ""
+                },
+                {
+                    "header": "Jednoliniowy komentarz",
+                    "description": "Jednoliowy komentarz zaczyna się od dwóch ukośników {//}.\nKażdy tekst pomiędzy {//} a końcem linii jest ignorowany przez Javę (nie zostanie wykonany).",
+                    "code": "// To jest komentarz\nSystem.out.println(\"Hello World\");\n\nSystem.out.println(\"Hello World\"); // To też jest komentarz",
+                    "output": "",
+                    "codeDescription": ""
+                },
+                {
+                    "header": "Wieloliniowy komentarz",
+                    "description": "Wieloliniowy komentarz zaczyna się od {/*} i kończy się {*/}.\nCały tekst pomiędzy {/*} i {*/} zostanie pominięty przez Javę.",
+                    "code": "/* To naprawdę jest komentarz\nto jest niesamowite */\nSystem.out.println(\"Hello World\");",
+                    "output": "",
+                    "codeDescription": ""
+                }
+                
+            ]
+        },
+        {
+            "page": [
+                {
+                    "header": "Zmienne w Javie",
+                    "description": "Zmienna jest \"pojemnikiem\", który przechowuje dane.\nW Javie istnieją różne typy zmiennych, na przykład:\n  -{String} - przechowuje tekst, np. „Hello”. Wartości ciągu są ujęte w cudzysłowy\n  -{int} - przechowuje liczby całkowite (liczby całkowite), bez miejsc dziesiętnych, np. 123 lub -123\n  -{float} — przechowuje liczby zmiennoprzecinkowe z miejscami dziesiętnymi, np. 19,99 lub -19,99\n  -{char} - przechowuje pojedyncze znaki, takie jak „a” lub „B”. Wartości znaków są ujęte w pojedyncze cudzysłowy\n  -{boolean} - przechowuje wartości w dwóch stanach: true lub false",
+                    "code": "",
+                    "output": "",
+                    "codeDescription": ""
+                },
+                {
+                    "header": "Deklaracja zmiennych",
+                    "description": "Aby zadeklarować zmienną trzeba określić jej typ i przypisać jej wartość\n{Typ nazwaZmiennej = wartość}\nGdzie {Typ} jest jednym z typów Java (np. int lub String), a {nazwaZmiennej} jest nazwą zmiennej (np. x lub nazwa). Znak równości służy do przypisania wartości do zmiennej.\n",
+                    "code": "String text = \"Tekst\";\nSystem.out.println(text);\nint value = 5;\nSystem.out.println(value);",
+                    "output": "Tekst\n5",
+                    "codeDescription": ""
+                },
+                {
+                    "header": "",
+                    "description": "Możesz też najpierw zadeklarować zmienną bez przypisywania do niej wartości, a później przypisać do niej później.\nJeśli przypiszesz wartość do istniejącej zmiennej, to nadpisze poprzednią wartość.",
+                    "code": "int value;\nvalue = 15;\nSystem.out.println(value);\nvalue=20;\nSystem.out.println(value);",
+                    "output": "15\n20",
+                    "codeDescription": ""
+                },
+                {
+                    "header": "Zmienne final",
+                    "description": "Jeśli nie chcesz, aby inni (lub Ty) nadpisywali istniejące wartości, użyj słowa {final}. Spowoduje to zadeklarowanie zmiennej jako „końcowej” lub „stałej”, co oznacza niezmienną i tylko do odczytu.",
+                    "code": "final int myNum = 15;\n myNum = 20;  // will generate an error: cannot assign a value to a final variable",
+                    "output": "",
+                    "codeDescription": ""
+                },
+                {
+                    "header": "Inne typy",
+                    "description": "O to jak możesz zadeklarować zmienne o innych typach:",
+                    "code": "int myNum = 5;\nfloat myFloatNum = 5.99f;\nchar myLetter = 'D';\nboolean myBool = true;\nString myText = \"Hello\";",
+                    "output": "",
+                    "codeDescription": ""
+                },
+                {
+                    "header": "Wyświetlanie zmiennych",
+                    "description": "Aby połączyć tekst i zmienną, użyj znaku {+}\nDla zmienncyh liczbowych {+} działa jako operator arytmetyczny.",
+                    "code": "String text = \"World!\";\nSystem.out.println(\"Hello \" + text);\nint x = 2;\nint y = 3;\nSystem.out.println(x + y);",
+                    "output": "Hello World!\n5",
+                    "codeDescription": ""
+                },
+                {
+                    "header": "Deklaracja wielu zmiennych",
+                    "description": "Żeby zadeklarować kilka zmiennych tego samego typu możesz listy oddzielonej przecinkiem.\nTę samą wartość możesz przypisać do wielu zmiennych w jednej linii.",
+                    "code": "int x = 5, y = 6, z = 50;\nint a, b, c;\na = b = c = 50;",
+                    "output": "",
+                    "codeDescription": ""
+                }
+                
+            ]
+        },
+        {
+            "page": [
+                {
+                    "header": "Typy danych",
+                    "description": "Typy danych dzielą się na dwie grupy:\n  -{Pierwotne} typy danych — obejmują {byte}, {short}, {int}, {long}, {float}, {double}, {boolean} i {char}\n  -{Nieprymitywne} typy danych - takie jak {String}, {Arrays} i {Classes} (dowiesz się o nich więcej w późniejszym rozdziale)\nJak wyjaśniono w poprzednim rozdziale, zmienna w Javie musi mieć określony typ danych:",
+                    "code": "int myNum = 5;               // Integer (whole number)\nfloat myFloatNum = 5.99f;    // Floating point number\nchar myLetter = 'D';         // Character\nboolean myBool = true;       // Boolean\nString myText = \"Hello\";     // String",
+                    "output": "",
+                    "codeDescription": ""
+                },
+                {
+                    "header": "",
+                    "description": "",
+                    "code": "",
+                    "output": "",
+                    "codeDescription": "Tutaj jeszcze tabelka z typami prymitywnymi"
+                },
+                {
+                    "header": "Nieprymitywne typy danych",
+                    "description": "{Nieprymitywne} typy danych nazywane są typami referencyjnymi, ponieważ odnoszą się do obiektów.\nGłówną różnicą między {pierwotnymi} i {nieprymitywnymi} typami danych są:\n  -Typy {prymitywne} są predefiniowane (już zdefiniowane) w Javie. Typy {nieprymitywne} są tworzone przez programistę i nie są definiowane przez Javę (z wyjątkiem {String}).\n  -{Nieprymitywnych} typów można używać do wywoływania metod w celu wykonania określonych operacji, podczas gdy typy {prymitywne} nie mogą.\n  -Typ {prymitywny} zawsze ma wartość, a {nieprymitywny} może być {null}\nPrzykładami typów nieprymitywnych są Stringi, tablice, klasy, interfejsy itp. Dowiesz się więcej na ten temat w późniejszym rozdziale.",
+                    "code": "",
+                    "output": "",
+                    "codeDescription": ""
+                }
+            ]
+        },
+        {
+            "page": [
+                {
+                    "header": "Rzutowanie zmiennych",
+                    "description": "Rzutowanie typów polega na przypisywaniu wartości jednego pierwotnego typu danych innemu typowi.\nW Javie istnieją dwa typy rzutowania:\n-{Poszerzanie rzutowania} (automatycznie) - konwersja mniejszego typu na większy\n{byte} -> {short} -> {char} -> {int} -> {long} -> {float} -> {double}\n-{Zawężanie rzutowania} (ręcznie) - konwersja większego typu na mniejszy rozmiar\n{double} -> {float} -> {long} -> {int} -> {char} -> {short} -> {byte}",
+                    "code": "",
+                    "output": "",
+                    "codeDescription": ""
+                },
+                {
+                    "header": "Poszerzanie rzutowania",
+                    "description": "{Poszerzanie rzutowania} wykonuje się {automatycznie}, podczas przekazywania typu o mniejszym rozmiarze do typu o większym rozmiarze",
+                    "code": "int myInt = 9;\ndouble myDouble = myInt;\n\nSystem.out.println(myInt);\nSystem.out.println(myDouble);",
+                    "output": "9\n9.0",
+                    "codeDescription": ""
+                },
+                {
+                    "header": "Zawężanie rzutowania",
+                    "description": "{Zawężanie rzutowania} musi zostać wykonane manualnie poprzez podanie {typu} w nawiasach przed wartością.",
+                    "code": "double myDouble = 9.78d;\nint myInt = (int)myDouble\n\nSystem.out.println(myInt);\nSystem.out.println(myDouble);",
+                    "output": "9\n9.78",
+                    "codeDescription": ""
+                }
+                
+            ]
+        },
+        {
+            "page": [
+                {
+                    "header": "Operatory",
+                    "description": "Operatory służą do wykonywania operacji na zmiennych i wartościach.\nJava dzieli operatory na kilka grup:\n-{Operatory arytmetyczne}\n-{Operatory przypisania}\n-{Operatory porównania}\n-{Operatory logiczne}\n-{Operatory bitowe}",
+                    "code": "",
+                    "output": "",
+                    "codeDescription": ""
+                },
+                {
+                    "header": "Operatory arytmetyczne",
+                    "description": "Operatory arytmetyczne służą do wykonywania typowych operacji matematycznych.",
+                    "code": "",
+                    "output": "",
+                    "codeDescription": "Tu tabelka"
+                },
+                {
+                    "header": "Operatory przypisanie",
+                    "description": "Operatory przypisania służą do przypisywania wartości zmiennym.",
+                    "code": "int x = 10;\nx += 5\nSystem.out.println(x)\n",
+                    "output": "15",
+                    "codeDescription": "tu jeszcze tabelka"
+                },
+                {
+                    "header": "Operatory porównania",
+                    "description": "Operatory porównania służą do porównywania dwóch wartości (lub zmiennych). Jest to ważne w programowaniu, ponieważ pomaga nam znajdować odpowiedzi i podejmować decyzje.\nWartość zwracana przez porównanie to {true} lub {false}. Wartości te nazywane są wartościami boolowskimi i dowiesz się o nich więcej w rozdziale {Boolean} i {If..Else}.",
+                    "code": "",
+                    "output": "",
+                    "codeDescription": "tu też"
+                },
+                {
+                    "header": "Operatory logiczne",
+                    "description": "Można także testować wartości prawdziwe lub fałszywe za pomocą operatorów logicznych.\nOperatory logiczne służą do określenia logiki pomiędzy zmiennymi lub wartościami:",
+                    "code": "",
+                    "output": "",
+                    "codeDescription": "tabelka"
+                }
+                
+            ]
+        },
+        {
+            "page": [
+                {
+                    "header": "Klasa String",
+                    "description": "String jest stosowany do przechowywania tekstu\nZmienna {String} zawiera ciąg znaków otoczony cudzysłowem.",
+                    "code": "String greeting = \"Hello\";",
+                    "output": "",
+                    "codeDescription": ""
+                },
+                {
+                    "header": "Długość Stringa",
+                    "description": "W Javie String jest obiektem, więc zawiera metody, które mogą wykonywać określone operacje na ciągach znaków. Na przykład długość łańcucha można znaleźć za pomocą metody length().",
+                    "code": "String text = \"ABCDEFGHIJKLMNOPQRSTUVWXYZ\";\nSystem.out.println(\"Długość tego stringa wynosi: \" + text.length());",
+                    "output": "Długość tego stringa wynosi: 26",
+                    "codeDescription": ""
+                },
+                {
+                    "header": "Inne metody klasy String",
+                    "description": "Dostępnych jest wiele metod, na przykład toUpperCase() i toLowerCase():",
+                    "code": "String txt = \"Witaj\";\nSystem.out.println(txt.toUpperCase());\nSystem.out.println(txt.toLowerCase());",
+                    "output": "WITAJ\nwitaj",
+                    "codeDescription": ""
+                },
+                {
+                    "header": "Znajdowanie znaku w Stringu",
+                    "description": "Metoda IndexOf() zwraca indeks (pozycję) pierwszego wystąpienia określonego tekstu w ciągu znaków (łącznie ze spacjami).",
+                    "code": "String txt = \"Proszę znajdź gdzie 'znajdź' się znajduje!\";\nSystem.out.println(txt.indexOf(\"znajdź\"));",
+                    "output": "7",
+                    "codeDescription": "Java liczy pozycje od zera.\n0 to pierwsza pozycja w ciągu, 1 to druga, 2 to trzecia pozycja..."
+                },
+                {
+                    "header": "Łączenie dwóch Stringów",
+                    "description": "Stringi możesz łączyć za pomocą operatora {+} lub metody {concat()}",
+                    "code": "String name = \"Jan \";\nString lastName = \"Kowalski\";\nSystem.out.println(name + lastName);System.out.println(name.concat(lastName));",
+                    "output": "Jan Kowalski\nJan Kowalski",
+                    "codeDescription": "."
+                },
+                {
+                    "header": "Znajdowanie znaku w Stringu",
+                    "description": "",
+                    "code": "",
+                    "output": " ",
+                    "codeDescription": ""
+                }
+                
+            ]
+        },
+        {
+            "page": [
+                {
+                    "header": "",
+                    "description": "",
+                    "code": "",
+                    "output": "",
+                    "codeDescription": ""
+                }
+                
+            ]
+        },
+        {
+            "page": [
+                {
+                    "header": "",
+                    "description": "",
+                    "code": "",
+                    "output": "",
+                    "codeDescription": ""
+                }
+                
+            ]
+        },
+        {
+            "page": [
+                {
+                    "header": "",
+                    "description": "",
+                    "code": "",
+                    "output": "",
+                    "codeDescription": ""
+                }
+                
+            ]
+        },
+        {
+            "page": [
+                {
+                    "header": "",
+                    "description": "",
+                    "code": "",
+                    "output": "",
+                    "codeDescription": ""
+                }
+                
+            ]
+        },
+        {
+            "page": [
+                {
+                    "header": "",
+                    "description": "",
+                    "code": "",
+                    "output": "",
+                    "codeDescription": ""
+                }
+                
+            ]
+        },
+        {
+            "page": [
+                {
+                    "header": "",
+                    "description": "",
+                    "code": "",
+                    "output": "",
+                    "codeDescription": ""
+                }
+                
+            ]
+        },
+        {
+            "page": [
+                {
+                    "header": "",
+                    "description": "",
+                    "code": "",
+                    "output": "",
+                    "codeDescription": ""
+                }
+                
+            ]
         }
     ]
 }

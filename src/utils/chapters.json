@@ -1,0 +1,33 @@
+{
+    "main": [],
+    "basics": [
+        "Czym jest Java?",
+        "Składnia",
+        "Wyświetlanie wyniku",
+        "Wyświetlanie liczb",
+        "Komentarze",
+        "Zmienne",
+        "Typy danych",
+        "Rzutowanie zmiennych",
+        "Operatory",
+        "Klasa String",
+        "Klasa Math",
+        "Booleans",
+        "If...Else",
+        "Switch",
+        "Pętla while",
+        "Pętla for",
+        "Instrukcja break i continue",
+        "Tablice"
+
+    ],
+    "methods":[
+        "Metody"
+    ],
+    "classes":[
+        "Java OOP"
+    ],
+    "files": [
+        "Java pliki"
+    ]
+}
