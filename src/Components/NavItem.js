@@ -15,49 +15,33 @@ import { color } from "framer-motion"
 
 
 
-export default function NavItem({ icon, title, active, navSize, path }) {
+export default function NavItem({  title, active, path }) {
     return (
         <Flex
-            mt={30}
-            flexDir="column"
-            w="100%"
-            alignItems={navSize == "small" ? "center" : "flex-start"}
+          flexDir="column"
+          w="100%"
+          alignItems= "flex-start"
         >
-            <Menu placement="right">
-                <Link
-                    backgroundColor={active && "#AEC8CA"}
-                    p={2}
-                    
-                    borderRadius={8}
-                    _hover={{ textDecor: 'none' }}
-                    w={navSize == "large" && "100%"}
+          <HStack  w="100%">
+            <Button w="100%" as={NavLink} to={path}
+            background= '#ff416c'
+            background= '-webkit-linear-gradient(to right, #ff4b2b, #ff416c)'
+            background= 'linear-gradient(to right, #ff4b2b, #ff416c)'
+            textColor= "white"
+            borderRadius= "0px"
+            
+            _hover={{ textDecor: 'none', borderRadius: "0px",  background: '#d13e60',
+                background: '-webkit-linear-gradient(to right, #d13600, #d13e60)',
+                background: 'linear-gradient(to right, #d13600, #d13e60)', 
+                textColor: 'white'
+            }}
                 >
-                  <HStack>
-                    <Button w="100%" as={NavLink} to={path}
-                     _hover={{ textDecor: 'none',  background: '#ff416c',
-                     background: '-webkit-linear-gradient(to right, #ff4b2b, #ff416c)',
-                     background: 'linear-gradient(to right, #ff4b2b, #ff416c)', 
-                     textColor: 'white'}} 
-                     >
-                        <NavLink to="signIn"></NavLink>
-                        <Flex >
-                            <Icon as={icon} fontSize="xl" color={active ? "#82AAAD" : "gray.500"} />
-                            <Text ml={5} display={navSize == "small" ? "none" : "flex"} >{title}</Text>
-                        </Flex>
-                    </Button>
-                  </HStack>
-                </Link>
-                <MenuList
-                    
-                    py={0}
-                    border="none"
-                    w={200}
-                    h={200}
-                    ml={5}
-                >
-                    
-                </MenuList>
-            </Menu>
+                <NavLink to="signIn"></NavLink>
+                <Flex >
+                    <Text ml={5} display= "flex" >{title}</Text>
+                </Flex>
+            </Button>
+          </HStack>
         </Flex>
     )
 }
