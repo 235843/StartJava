@@ -9,6 +9,7 @@ import MethodsPage from '../Views/MethodsPage'
 import ClassesPage from '../Views/ClassesPage'
 import FilePage from '../Views/FilePage'
 import TestsPage from '../Views/TestsPage'
+import HelpPage from '../Views/HelpPage'
 
 const Router = () => {
   return (
@@ -49,19 +50,26 @@ const Router = () => {
           }
           path={paths.classes}/>  
          
-         <Route element={
+        <Route element={
             <Suspense fallback={null}>
               <FilePage/>
             </Suspense>
           }
           path={paths.files}/>
 
-          <Route element={
+        <Route element={
              <Suspense fallback={null}>
                <TestsPage/>
              </Suspense>
            }
            path={paths.tests}/>
+
+           <Route element={
+              <Suspense fallback={null}>
+                <HelpPage/>
+              </Suspense>
+            }
+            path={paths.help}/>
       </Routes>
     </BrowserRouter>
     </>

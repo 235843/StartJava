@@ -1,14 +1,12 @@
 import React from 'react'
-import data from '../utils/home.json'
+import data from '../utils/help.json'
 import Navbar from '../Components/Navbar';
 import Sidebar from '../Components/Sidebar';
 import { Box, Divider, Flex } from '@chakra-ui/react';
 import HeaderComponent from '../Components/HeaderComponent';
-import CodeSampleComponent from '../Components/CodeSampleComponent';
-import OutputComponent from '../Components/OutputComponent';
-import InformationComponent from '../Components/InformationComponent';
+import UrlComponent from '../Components/UrlComponent'
 
-export default function HomePage() {
+export default function HelpPage() {
   const body = JSON.parse(JSON.stringify(data))
 
   return (
@@ -21,11 +19,9 @@ export default function HomePage() {
             {body.page.map(elem  => 
               <>
                 <HeaderComponent title={elem.header} description={elem.description} />
-                <CodeSampleComponent code={elem.code} />
-                <OutputComponent output={elem.output} />
-                <InformationComponent info={elem.codeDescription} />
+                <UrlComponent url={elem.link} />
 
-                <Divider  marginTop="10px" mb="8"/>
+                <Divider mb="8"/>
               </>
             )}
         </Box>

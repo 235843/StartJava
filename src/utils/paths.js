@@ -6,7 +6,8 @@ export const paths = {
     methods: "/methods",
     classes: "/classes",
     files: "/fileHandling",
-    tests: "/tests"
+    tests: "/tests",
+    help: "/help"
   };
 
   export const baseUrl = 'http://localhost:8080'

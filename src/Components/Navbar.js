@@ -1,6 +1,7 @@
-import {  Image, Flex, Button,  HStack , chakra, Text, useToast } from '@chakra-ui/react';
+import {  Image, Flex, Button,  HStack , chakra, Text, useToast, Icon } from '@chakra-ui/react';
 
-
+import { Menu, MenuButton, MenuList, MenuItem, MenuGroup, MenuDivider} from '@chakra-ui/react'
+import {FiUser} from 'react-icons/fi'
 import React from "react";
 import { NavLink } from 'react-router-dom';
 import { paths } from '../utils/paths';
@@ -25,8 +26,16 @@ export default function Navbar() {
   }, []);
 
   return (
-    <chakra.header id="header">
+    <chakra.header  id="header"
+      position="sticky"
+      top="0"
+      zIndex={10}
+      
+    >
       <Flex
+        position="sticky"
+        top="5"
+        zIndex={10}
         w="100%"
         px="6"
         py="5"
@@ -42,23 +51,39 @@ export default function Navbar() {
         </Text>
 		
         <HStack>
-          <Button>
-            {authenticated ? 
-              <button onClick={() => {
-                localStorage.removeItem("authorization");
-                localStorage.removeItem("role");
-                setAuthenticated(false);
-                toastIdRef.current = toast({ 
-                  title: 'Wylogowano',
-                  description: "Wylogowano pomyślnie",
-                  status: 'info',
-                  duration: 9000,
-                  isClosable: true
-                })
-              }}>{logout}</button> :
-              <NavLink to={paths.signIn}>{CTA}</NavLink> 
+          <Menu>
+            <MenuButton as={Button} color='white' textColor='dark'>
+              <Icon  as={FiUser} fontSize="xl" color={"#82AAAD"} />
+            </MenuButton>
+            <MenuList>
+              {authenticated ? 
+                <MenuGroup title='Profil'>
+                  <MenuItem> Mój profil</MenuItem>
+                  <MenuItem onClick={() => {
+                    localStorage.removeItem("authorization");
+                    localStorage.removeItem("role");
+                    setAuthenticated(false);
+                    toastIdRef.current = toast({ 
+                      title: 'Wylogowano',
+                      description: "Wylogowano pomyślnie",
+                      status: 'info',
+                      duration: 9000,
+                      isClosable: true
+                     })
+                  }}> Wyloguj </MenuItem>
+                </MenuGroup> 
+                :
+                <MenuGroup title='Profil'>
+                  <MenuItem as={NavLink} to={paths.signIn}> Zaloguj </MenuItem>
+                </MenuGroup>
             }
-          </Button>
+              
+              <MenuDivider />
+              <MenuGroup title='Pomoc'>
+                <MenuItem as={NavLink} to={paths.help}> Przydatne linki</MenuItem>
+              </MenuGroup>
+            </MenuList>
+          </Menu>
         </HStack>
         
       </Flex>

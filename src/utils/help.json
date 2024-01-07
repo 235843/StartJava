@@ -1,0 +1,20 @@
+{
+    "page": [
+        {
+            "header": "Środowisko programistyczne",
+            "description": "Eclipse jest darmowym środowiskiem i głównie używa się go do tworzenia aplikacji w Javie.",
+            "link": "https://eclipseide.org",
+            "code": "",
+            "output": "",
+            "codeDescription": ""
+        },
+        {
+            "header": "Pełna dokumentacja Javy",
+            "description": "Znajdziesz tu informacje o wszystkich podstawowych modułach Javy.",
+            "link": "https://docs.oracle.com/en/java/javase/21/docs/api",
+            "code": "",
+            "output": "",
+            "codeDescription": ""
+        }
+    ]
+}

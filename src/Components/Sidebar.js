@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import {
     Flex,
     IconButton,
+    Select
 } from '@chakra-ui/react'
 import {
     FiMenu,
@@ -13,50 +14,54 @@ import {
 } from 'react-icons/fi'
 import NavItem from './NavItem'
 import { paths } from '../utils/paths'
+import data from '../utils/chapters.json'
+import ChapterComponent from './ChapterComponent'
+
 
 export default function Sidebar() {
-    const [navSize, changeNavSize] = useState("large")
+    const body = JSON.parse(JSON.stringify(data))
     return (
+      <Flex
+        pos="sticky"
+        top="10"
+        left="5"
+        h="85vh"
+        marginTop="2.5vh"
+        boxShadow="0 4px 12px 0 rgba(0, 0, 0, 0.05)"
+        borderRadius= "5px"
+        w= "25%"
+        flexDir="column"
+        background= '#ff416c'
+        background= '-webkit-linear-gradient(to right, #ff4b2b, #ff416c)'
+        background= 'linear-gradient(to right, #ff4b2b, #ff416c)'
+        overflowY="auto" // Set overflow to auto for vertical scrolling
+        maxHeight="85vh" // Set a maximum height to enable scrolling
+        sx={{
+            '&::-webkit-scrollbar': {
+              width: '16px',
+              borderRadius: '5px',
+              backgroundColor: `#ff416c`,
+            },
+            '&::-webkit-scrollbar-thumb': {
+                borderRadius: '5px',
+              backgroundColor: `#d13e60`,
+            },
+          }}
+      >
         <Flex
-            pos="sticky"
-            left="5"
-            h="85vh"
-            marginTop="2.5vh"
-            boxShadow="0 4px 12px 0 rgba(0, 0, 0, 0.05)"
-            borderRadius={navSize == "small" ? "15px" : "30px"}
-            w={navSize == "small" ? "75px" : "200px"}
             flexDir="column"
-            background='#FFF0F5'
-            justifyContent="space-between"
+            w="100%"
+            alignItems= "flex-start"
         >
-            <Flex
-                p="5%"
-                flexDir="column"
-                w="100%"
-                alignItems={navSize == "small" ? "center" : "flex-start"}
-                as="nav"
-            >
-                <IconButton
-                    background="none"
-                    mt={5}
-                    _hover={{ background: 'none' }}
-                    icon={<FiMenu />}
-                    onClick={() => {
-                        if (navSize == "small")
-                            changeNavSize("large")
-                        else
-                            changeNavSize("small")
-                    }}
-                />
-                <NavItem navSize={navSize} icon={FiHome} title="Strona Główna" path={paths.landingPage} />
-                <NavItem navSize={navSize} icon={FiBook} title="Java Podstawy"  path={paths.basics}/>
-                <NavItem navSize={navSize} icon={FiHash} title="Java Metody" path={paths.methods}/>
-                <NavItem navSize={navSize} icon={FiLayers} title="Java Klasy" path={paths.classes}/>
-                <NavItem navSize={navSize} icon={FiFile} title="Obsługa plików" path={paths.files}/>
                 
-            </Flex>
+                <ChapterComponent title="Podstawy Javy" data={body.basics} path={paths.basics} />
+                <ChapterComponent title="Metody w Javie" data={body.methods} path={paths.methods} />
+                <ChapterComponent title="Klasy w Javie" data={body.classes} path={paths.classes} />
+                <ChapterComponent title="Obsługa plików" data={body.files} path={paths.files} />
+                
+        </Flex>
 
             
-        </Flex>
+      </Flex>
     )
 }
