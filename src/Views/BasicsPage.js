@@ -20,28 +20,26 @@ export default function BasicsPage(){
     urlId = '0'
   }
   const id = parseInt(urlId, 10);
-  
+
   const loadData = JSON.parse(JSON.stringify(data))
   const body = loadData.basics[id];
-
 
   return (
     <React.StrictMode>
       <Navbar/>
-        
       <Flex w='95%'  position= 'absolute' marginLeft="20px" >
         <Sidebar/>
-        <Box borderWidth="1px" borderRadius="lg" p="6" m="4" minWidth="85%">
+        <Box borderWidth="1px" borderRadius="lg" p="6" m="4" minWidth="80%" >
           <SwitchPageButtonsComponent path={paths.basics} id={id} />
             {body.page.map(elem  => 
-            <>
+              <>
                 <HeaderComponent title={elem.header} description={elem.description} />
                 <CodeSampleComponent code={elem.code} />
                 <OutputComponent output={elem.output} />
                 <InformationComponent info={elem.codeDescription} />
 
-                <Divider mb="8"/>
-            </>
+                <Divider marginTop="10px" mb="8"/>
+              </>
             )}
         </Box>
       </Flex>

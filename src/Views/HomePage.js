@@ -1,5 +1,4 @@
 import React from 'react'
-import { json, useParams } from 'react-router-dom'
 import data from '../utils/home.json'
 import Navbar from '../Components/Navbar';
 import Sidebar from '../Components/Sidebar';
@@ -18,7 +17,7 @@ export default function HomePage() {
         
       <Flex w='95%'  position= 'absolute' marginLeft="20px" >
         <Sidebar/>
-        <Box borderWidth="1px" borderRadius="lg" p="6" m="4" minWidth="85%" >
+        <Box borderWidth="1px" borderRadius="lg" p="6" m="4" minWidth="80%" >
             {body.page.map(elem  => 
               <>
                 <HeaderComponent title={elem.header} description={elem.description} />
@@ -26,7 +25,7 @@ export default function HomePage() {
                 <OutputComponent output={elem.output} />
                 <InformationComponent info={elem.codeDescription} />
 
-                <Divider mb="8"/>
+                <Divider  marginTop="10px" mb="8"/>
               </>
             )}
         </Box>

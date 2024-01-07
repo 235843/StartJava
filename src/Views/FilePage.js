@@ -9,6 +9,8 @@ import CodeSampleComponent from '../Components/CodeSampleComponent';
 import OutputComponent from '../Components/OutputComponent';
 import InformationComponent from '../Components/InformationComponent';
 import FileMethodsGridComponent from '../Components/FileMethodsGridComponent';
+import { paths } from '../utils/paths';
+import SwitchPageButtonsComponent from '../Components/SwitchPageButtonsComponent';
 
 export default function FilePage(){
   const location = useLocation();
@@ -28,7 +30,7 @@ export default function FilePage(){
       <Navbar/>
       <Flex w='95%'  position= 'absolute' marginLeft="20px" >
         <Sidebar/>
-        <Box borderWidth="1px" borderRadius="lg" p="6" m="4" minWidth="85%" >
+        <Box borderWidth="1px" borderRadius="lg" p="6" m="4" minWidth="80%" >
           <SwitchPageButtonsComponent path={paths.files} id={id} />
             {body.page.map(elem  => 
             <>
@@ -37,7 +39,7 @@ export default function FilePage(){
                 <OutputComponent output={elem.output} />
                 <InformationComponent info={elem.codeDescription} />
 
-                <Divider mb="8"/>
+                <Divider marginTop="10px" mb="8"/>
             </>
             )}
             <FileMethodsGridComponent id={id}/>
