@@ -23,6 +23,9 @@ export default function FilePage(){
   const id = parseInt(urlId, 10);
 
   const loadData = JSON.parse(JSON.stringify(data))
+  if (id >= loadData.files.length || id < 0) {
+    id = 0;
+  }
   const body = loadData.files[id];
 
   return (
