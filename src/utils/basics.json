@@ -23,7 +23,7 @@
             "page": [
                 {
                     "header": "Szybki start",
-                    "description": "W Javie każda aplikacja zaczyna się nazwą klasy. Klasa ta musi znajdować się w pliku o tej samej nazwie.\nStwórzmy pierwszy plik Javy o nazwie Main.java, w którym zawrzemy wiadomość \"Hello World!\".",
+                    "description": "W Javie każda aplikacja zaczyna się nazwą {klasy}. {Klasa} ta musi znajdować się w pliku o tej samej nazwie.\nStwórzmy pierwszy plik Javy o nazwie {Main.java}, w którym zawrzemy wiadomość \"Hello World!\".",
                     "code": "public class Main {\n  public static void main(String[] args) {\n    System.out.println(\"Hello World!\");\n  }\n}",
                     "output": "Hello World!",
                     "codeDescription": "Każda linia kodu napisana w Javie musi znajdować się wewnątrz {klasy}. W naszym przykładzie klasę nazwaliśmy {Main}. Nazwa klasy zawsze powinna zaczynać się z dużej litery.\nW Javie wielkość liter ma znaczenie, czyli {\"MyClass\"} i {\"myclass\"} ma różne znaczenie.\nZapisując plik Javy nazwij go tak samo jak klasę i dodaj na koniec rozszerzenie {.java}."
