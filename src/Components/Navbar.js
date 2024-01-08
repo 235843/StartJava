@@ -46,9 +46,11 @@ export default function Navbar() {
         background= 'linear-gradient(to right, #ff4b2b, #ff416c)'
       >
         
-        <Text ml="4" as="h2" fontSize="24px" color='white'>
+        <NavLink to={paths.landingPage}>
+          <Text fontSize="28px" color="white" fontStyle="bold" >
             {title}
-        </Text>
+          </Text>
+        </NavLink>
 		
         <HStack>
           <Menu>

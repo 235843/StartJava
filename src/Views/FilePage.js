@@ -31,7 +31,7 @@ export default function FilePage(){
       <Flex w='95%'  position= 'absolute' marginLeft="20px" >
         <Sidebar/>
         <Box borderWidth="1px" borderRadius="lg" p="6" m="4" minWidth="80%" >
-          <SwitchPageButtonsComponent path={paths.files} id={id} />
+          <SwitchPageButtonsComponent path={paths.files} id={id} pageCount={loadData.files.length}/>
             {body.page.map(elem  => 
             <>
                 <HeaderComponent title={elem.header} description={elem.description} />

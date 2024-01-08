@@ -298,21 +298,23 @@
                     "codeDescription": "."
                 },
                 {
-                    "header": "Znajdowanie znaku w Stringu",
-                    "description": "",
-                    "code": "",
-                    "output": " ",
+                    "header": "Liczby i Stringi",
+                    "description": "Uważaj, Java używa operatora {+} do dodawania i do łączenia",
+                    "code": "int x = 10, y = 20;\nString a = \"10\", b = \"20\";\nSystem.out.println(x + y);  // 10 + 20\nSystem.out.println(a + y);  // \"10\" + 20\nSystem.out.println(a + b);  // \"10\" + \"20\"",
+                    "output": "30\n1020\n1020",
                     "codeDescription": ""
-                }
-                
-            ]
-        },
-        {
-            "page": [
+                },
                 {
-                    "header": "",
+                    "header": "Znaki specjalne",
+                    "description": "Ponieważ ciągi znaków muszą być ujęte w cudzysłów, Java błędnie zrozumie ten ciąg i wygeneruje błąd.\nRozwiązaniem pozwalającym uniknąć tego problemu jest użycie znaku ucieczki odwrotnego ukośnika.\nZnak lewego ukośnika {(\\)} zamienia znaki specjalne na znaki łańcuchowe",
+                    "code": "String txt = \"We are the so-called \"Vikings\" from the north.\";  //Błąd\nString txt = \"We are the so-called \\\"Vikings\\\" from the north.\";",
+                    "output": "",
+                    "codeDescription": ""
+                },
+                {
+                    "header": "Inne możliwości użycia \\",
                     "description": "",
-                    "code": "",
+                    "code": "String txt = \"It\\'s alright.\";  // Wstawia ' do tekstu\ntxt = \"To jest ukośnik: \\ \";  // Wstawia \\ do tekstu\ntxt = \"\\n\";  // Wstawia znak nowej linii do tekstu\ntxt = \"\\t\";  // Wstawia tabulator linii do tekstu\ntxt = \"\\b\";  // Ussuwa poprzednio wyświetlony znak",
                     "output": "",
                     "codeDescription": ""
                 }
@@ -322,10 +324,35 @@
         {
             "page": [
                 {
-                    "header": "",
-                    "description": "",
-                    "code": "",
+                    "header": "Klasa Math",
+                    "description": "Klasa Math posiada wiele metod pozwalających na wykonywanie zadań matematycznych na liczbach.",
+                    "code": "System.out.print(Math.max(5, 10));  // Zwraca największą liczbę z podanych\nSystem.out.print(Math.min(5, 10));  // Zwraca najmniejszą liczbę z podanych\nSystem.out.print(Math.sqrt(64));  // Zwraca pierwiastek z podanej wartości\nSystem.out.print(Math.abs(-4.7));  // Zwraca wartość bezwględną z podanej wartości",
+                    "output": "10\n5\n8\n4.7",
+                    "codeDescription": ""
+                },
+                {
+                    "header": "Liczby losowe",
+                    "description": "Metoda{ Math.random()} zwraca liczbę między 0.0 (włącznie), a 1.0.\nAby mieć większą kontrolę nad losowanymi liczbami, na przykład chcąc otrzymać liczbę pomiędzy 0-100, możesz zastosować taką formułę:",
+                    "code": "int randomNum = (int)(Math.random() * 101);  // od 0 do 100",
                     "output": "",
+                    "codeDescription": ""
+                }                
+            ]
+        },
+        {
+            "page": [
+                {
+                    "header": "Booleans",
+                    "description": "Bardzo często w programowaniu, będziesz potrzebować danej trzymającą jedną z dwóch wartości, na przykład: TAK/NIE, ON/OFF lub TRUE/FALSE\nW tym celu Java ma typ danych boolowskich, który może przechowywać wartości {true} lub {false}.",
+                    "code": "boolean isJavaFun = true;\nboolean isFishTasty = false;\nSystem.out.println(isJavaFun);\nSystem.out.println(isFishTasty);",
+                    "output": "true\nfalse",
+                    "codeDescription": ""
+                },
+                {
+                    "header": "Wyrażenia logiczne",
+                    "description": "Wyrażenie wartość logiczną: {true} albo {false}. Jest to przydatne do budowania logiki i znajdowania odpowiedzi.\nNa przykład możesz użyć operatora porównania, takiego jak operator większości {>}, aby sprawdzić, czy wyrażenie (lub zmienna) jest prawdziwe, czy fałszywe:",
+                    "code": "System.out.println(10 > 9);\nint x = 10;\nSystem.out.println(x == 10);",
+                    "output": "true\ntrue",
                     "codeDescription": ""
                 }
                 
@@ -334,10 +361,38 @@
         {
             "page": [
                 {
-                    "header": "",
-                    "description": "",
+                    "header": "Warunki w Javie",
+                    "description": "Wiesz już, że Java obsługuje zwykłe warunki logiczne z matematyki:\n-Mniej niż: {a < b}\n-Mniejsze lub równe: {a <= b}\n-Większe niż:{ a > b}\n-Większe lub równe: {a >= b}\n-Równy {a == b}\n-Nierówne: {a != b}\nWarunków tych można używać do wykonywania różnych działań w przypadku różnych decyzji. określony warunek jest spełniony.",
                     "code": "",
                     "output": "",
+                    "codeDescription": ""
+                },
+                {
+                    "header": "Instrukcja if",
+                    "description": "Użyj instrukcji {if}, aby określić blok kodu Java, który ma zostać wykonany, jeśli warunek jest spełniony",
+                    "code": "if (20 > 18) {\n  System.out.println(\"20 jest większe niż 18\");\n}",
+                    "output": "20 jest większe niż 18",
+                    "codeDescription": "{if} jest pisany małymi literami. Wielkie litery (If lub IF) spowodują wygenerowanie błędu."
+                },
+                {
+                    "header": "Istrukcja else",
+                    "description": "Użyj instrukcji {else}, aby określić blok kodu, który ma zostać wykonany, jeśli warunek jest fałszywy.",
+                    "code": "int time = 20;\nif (time < 18) {\n  System.out.println(\"Dzień dobry\");\n} else {\n  System.out.println(\"Dobry wieczór\");\n}",
+                    "output": "Dobry wieczór",
+                    "codeDescription": ""
+                },
+                {
+                    "header": "Instrukcja else if",
+                    "description": "Użyj instrukcji {else if}, aby określić nowy warunek, jeśli pierwszy warunek jest fałszywy.",
+                    "code": "int time = 16;\nif (time < 10) {\n  System.out.println(\"Jest ranek\");\n} else if (time < 18) {\n  System.out.println(\"Jest dzień\");\n} else {\n  System.out.println(\"Jest wieczór\");\n}",
+                    "output": "Jest dzień",
+                    "codeDescription": ""
+                },
+                {
+                    "header": "Operator warunkowy ternarny",
+                    "description": "stnieje również skrót if else, znany jako operator trójskładnikowy, ponieważ składa się z trzech operandów.\nMożna go użyć do zastąpienia wielu linii kodu pojedynczą linią i najczęściej jest używany do zastępowania prostych instrukcji if else:\n{zmienna = (warunek) ? prawdziweWyrażenie : fałszyweWyrażenie}",
+                    "code": "int time = 20;\nString result = (time < 18) ? \"Dzień dobry\" : \"Dobry wieczór\";\nSystem.out.println(result);",
+                    "output": "Dobry wieczór",
                     "codeDescription": ""
                 }
                 
@@ -346,11 +401,11 @@
         {
             "page": [
                 {
-                    "header": "",
-                    "description": "",
-                    "code": "",
-                    "output": "",
-                    "codeDescription": ""
+                    "header": "Intrukcja switch",
+                    "description": "Zamiast pisać wiele instrukcji {if..else}, możesz użyć instrukcji {switch}.\nInstrukcja {switch} wybiera jeden z wielu bloków kodu, który ma zostać wykonany.\nTak to działa:\n-Wyrażenie {switch} jest oceniane raz.\n-Wartość wyrażenia jest porównywana z wartościami każdego przypadku.\n-Jeżeli występuje dopasowanie, wykonywany jest powiązany z nim blok kodu.",
+                    "code": "int x = 2;\nswitch (x) {\n  case 1:\n    System.out.println(\"Podana liczba to 1\");\n    break;\n  case 2:\n    System.out.println(\"Podana liczba to 2\");\n    break;\n  case 3:\n    System.out.println(\"Podana liczba to 3\");\n    break;\n  ...  // i tak dalej\n  default:\n    System.out.println(\"Nie rozpoznaje wprowadzonej liczby\");\n}",
+                    "output": "Podana liczba to 2",
+                    "codeDescription": "{break} może zaoszczędzić dużo czasu wykonania, ponieważ „ignoruje” wykonanie całej reszty kodu w bloku {switch}\n{default} określa kod do uruchomienia, jeśli nie ma dopasowania\nJeśli instrukcja {default} zostanie użyta jako ostatnia instrukcja w bloku {switch}, nie będzie potrzebny {break}"
                 }
                 
             ]
@@ -358,11 +413,25 @@
         {
             "page": [
                 {
-                    "header": "",
-                    "description": "",
+                    "header": "Pętle",
+                    "description": "Pętle mogą wykonywać blok kodu, dopóki warunek jest prawdziwy.\nPętle są przydatne, ponieważ oszczędzają czas, zmniejszają liczbę błędów i sprawiają, że kod jest bardziej czytelny",
                     "code": "",
                     "output": "",
                     "codeDescription": ""
+                },
+                {
+                    "header": "Pętla while",
+                    "description": "Pętla {while} wykonuje pętlę przez blok kodu, o ile spełniony jest określony warunek:",
+                    "code": "int i = 0;\nwhile (i < 5) {\n  System.out.print(i + \" \");\n  i++;\n}",
+                    "output": "0 1 2 3 4 ",
+                    "codeDescription": "Nie zapomnij zwiększyć zmiennej używanej w warunku, w przeciwnym razie pętla nigdy się nie skończy!"
+                },
+                {
+                    "header": "Pętla do/while",
+                    "description": "Pętla {do/while} jest odmianą pętli while. Pętla ta wykona blok kodu {raz}, przed sprawdzeniem, czy warunek jest prawdziwy, a następnie będzie powtarzać pętlę, dopóki warunek będzie prawdziwy.",
+                    "code": "int i = 0;\n do {\n  System.out.print(i + \" \");\n  i++;\n}\nwhile (i < 5);",
+                    "output": "0 1 2 3 4 ",
+                    "codeDescription": "Nie zapomnij zwiększyć zmiennej używanej w warunku, w przeciwnym razie pętla nigdy się nie skończy!"
                 }
                 
             ]
@@ -370,11 +439,39 @@
         {
             "page": [
                 {
-                    "header": "",
-                    "description": "",
-                    "code": "",
+                    "header": "Pętla for",
+                    "description": "Jeśli wiesz dokładnie, ile razy chcesz przejść przez blok kodu, użyj pętli for zamiast pętli while.",
+                    "code": "for (statement 1; statement 2; statement 3) {\n  // blok kodu do wykonania\n}",
                     "output": "",
                     "codeDescription": ""
+                },
+                {
+                    "header": "",
+                    "description": "{Instrukcja 1} jest wykonywana (jednorazowo) przed wykonaniem bloku kodu.\n{Instrukcja 2 }definiuje warunek wykonania bloku kodu.\n{Instrukcja 3} jest wykonywana (za każdym razem) po wykonaniu bloku kodu.",
+                    "code": "for (int i = 0; i < 5; i++) {\n  System.out.print(i + \" \");\n}",
+                    "output": "0 1 2 3 4 ",
+                    "codeDescription": "{Instrukcja 1} ustawia zmienną przed rozpoczęciem pętli {int i = 0}.\n{Instrukcja 2} definiuje warunek działania pętli {i musi być mniejsze niż 5}. Jeśli warunek jest prawdziwy, pętla zacznie się od nowa, jeśli jest fałszywy, pętla się zakończy.\n{Instrukcja 3} zwiększa wartość {i++} za każdym razem, gdy zostanie wykonany blok kodu w pętli."
+                },
+                {
+                    "header": "Pętle zagnieżdżone",
+                    "description": "Możliwe jest także umieszczenie pętli wewnątrz innej pętli. Nazywa się to {pętlą zagnieżdżoną}.\n{Pętla wewnętrzna zostanie wykonana raz na każdą iterację {pętli zewnętrznej}",
+                    "code": "// Zewnętrzna pętla\nfor (int i = 1; i <= 2; i++) {\n  System.out.println(\" Zewnętrzna: \" + i); // Wykona się 2 razy\n  // Wewnętrzna pętla\n  for (int j = 1; j <= 3; j++) {\n    System.out.print(\" Wewnętrzna: \" + j); // Wykona się łącznie 6 razy (2 * 3)\n  }\n} ",
+                    "output": " Zewnętrzna: 1\n Wewnętrzna: 1 Wewnętrzna: 2 Wewnętrzna: 3 Zewnętrzna: 2\n Wewnętrzna: 1 Wewnętrzna: 2 Wewnętrzna: 3",
+                    "codeDescription": ""
+                },
+                {
+                    "header": "Pętla for-each",
+                    "description": "Istnieje również pętla {for-each}, która służy wyłącznie do przeglądania elementów {tablicy}:",
+                    "code": "for (type variableName : arrayName) {\n  // blok kodu do wykonania\n}",
+                    "output": "",
+                    "codeDescription": ""
+                },
+                {
+                    "header": "",
+                    "description": "Poniższy przykład wyświetla wszystkie elementy tablicy samochodów przy użyciu pętli {for-each}:",
+                    "code": "String[] cars = {\"Volvo\", \"BMW\", \"Ford\", \"Mazda\"};\nfor (String i : cars) {\n  System.out.print(i + \" \");\n}",
+                    "output": "Volvo BMW Ford Mazda",
+                    "codeDescription": "Nie martw się, jeśli nie rozumiesz powyższego przykładu. Dowiesz się więcej o tablicach później"
                 }
                 
             ]
@@ -382,13 +479,52 @@
         {
             "page": [
                 {
-                    "header": "",
-                    "description": "",
-                    "code": "",
-                    "output": "",
+                    "header": "Intrukcja break",
+                    "description": "Instrukcję {break} widziałeś już we wcześniejszym rozdziale tego samouczka. Służyło do „wyskoczenia” z instrukcji {switch}.\nInstrukcji {break} można także użyć do wyskoczenia z {pętli}.",
+                    "code": "for (int i = 0; i < 10; i++) {\n  if (i == 4) {\n    break;\n  }\n   System.out.print(i + \" \");\n}",
+                    "output": "0 1 2 3 ",
                     "codeDescription": ""
+                },
+                {
+                    "header": "Instrukcja continue",
+                    "description": "Instrukcja {continue} przerywa {jedną} iterację (w pętli), jeśli wystąpi określony warunek, i kontynuuje od następnej iteracji w pętli.",
+                    "code": "for (int i = 0; i < 10; i++) {\n  if (i == 4) {\n    continue;\n  }\n   System.out.print(i + \" \");\n}",
+                    "output": "0 1 2 3 5 6 7 8 9 ",
+                    "codeDescription": "Instrukcji {break} i {continue} możesz zastosować też w pętlach {while}, {do/while} oraz {for-each}"
                 }
                 
+            ]
+        },
+        {
+            "page": [
+                {
+                    "header": "Tablice",
+                    "description": "{Tablice} służą do przechowywania wielu wartości w jednej zmiennej, zamiast deklarować osobne zmienne dla każdej wartości.\nAby zadeklarować {tablicę}, zdefiniuj typ zmiennej w {nawiasach kwadratowych}, a następnie możesz umieścić wartości na liście rozdzielonej przecinkami, wewnątrz {nawiasów klamrowych}",
+                    "code": "String[] cars = {\"Volvo\", \"BMW\", \"Ford\", \"Mazda\"};\nint[] myNum = {10, 20, 30, 40};",
+                    "output": "",
+                    "codeDescription": ""
+                },
+                {
+                    "header": "Dostęp do elementów tabeli",
+                    "description": "Dostęp do elementu {tablicy} można uzyskać, odwołując się do {numeru indeksu}.\nElementy tabeli możesz modyfikować w ten sposób",
+                    "code": "String[] cars = {\"Volvo\", \"BMW\", \"Ford\", \"Mazda\"};\nSystem.out.println(cars[0]);\ncars[0] = \"Audi\";\nSystem.out.println(cars[0]);",
+                    "output": "Volvo\nAudi",
+                    "codeDescription": "{Indeksy tablicy} zaczynają się od {0}: [0] jest pierwszym elementem. [1] to drugi element, itd."
+                },
+                {
+                    "header": "Długość tablicy",
+                    "description": "Aby dowiedzieć się, ile elementów ma {tablica}, użyj metody {length()}",
+                    "code": "String[] cars = {\"Volvo\", \"BMW\", \"Ford\", \"Mazda\"};\nSystem.out.println(cars.length());",
+                    "output": "4",
+                    "codeDescription": ""
+                },
+                {
+                    "header": "Pętla przez tablicę",
+                    "description": "Możesz przeglądać elementy {tablicy} za pomocą {pętli for} i użyć metody {length()}, aby określić, ile razy pętla powinna zostać uruchomiona.\nIstnieje również {pętla for-each}, która służy wyłącznie do przeglądania {elementów} w {tablicach}.",
+                    "code": "String[] cars = {\"Volvo\", \"BMW\", \"Ford\", \"Mazda\"};\nfor (int i = 0; i < cars.length; i++) {\n  System.out.print(cars[i] + \" \");\n}\nSystem.out.println(\"\");\nfor (String i : cars) {\n  System.out.print(i + \" \");\n}",
+                    "output": "Volvo BMW Ford Mazda \nVolvo BMW Ford Mazda ",
+                    "codeDescription": "Powyższy przykład {pętli for-each} można odczytać w ten sposób: dla każdego elementu {String} (zwanego i - jak w indeksie) w {tablicy cars} wypisz wartość {i}.\nJeśli porównasz pętlę {for} i pętlę {for-each}, zobaczysz, że metoda {for-each} jest łatwiejsza do napisania, nie wymaga licznika (przy użyciu właściwości długości) i jest bardziej czytelna."
+                }                
             ]
         }
     ]
