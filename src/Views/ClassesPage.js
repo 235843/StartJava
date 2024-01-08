@@ -23,6 +23,9 @@ export default function ClassesPage(){
   const id = parseInt(urlId, 10);
 
   const loadData = JSON.parse(JSON.stringify(data))
+  if (id >= loadData.classes.length || id < 0) {
+    id = 0;
+  }
   const body = loadData.classes[id];
 
   return (

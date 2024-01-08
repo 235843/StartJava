@@ -22,6 +22,9 @@ export default function MethodsPage() {
   const id = parseInt(urlId, 10);
 
   const loadData = JSON.parse(JSON.stringify(data))
+  if (id >= loadData.methods.length || id < 0) {
+    id = 0;
+  }
   const body = loadData.methods[id];
 
   return (

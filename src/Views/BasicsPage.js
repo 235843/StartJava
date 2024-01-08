@@ -19,11 +19,15 @@ export default function BasicsPage(){
   if (!urlId) {
     urlId = '0'
   }
-  const id = parseInt(urlId, 10);
+  let id = parseInt(urlId, 10);
 
   const loadData = JSON.parse(JSON.stringify(data))
+  if (id >= loadData.basics.length || id < 0) {
+    id = 0;
+  }
   const body = loadData.basics[id];
 
+  
   return (
     <React.StrictMode>
       <Navbar/>
