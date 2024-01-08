@@ -53,7 +53,6 @@ export default function Sidebar() {
             w="100%"
             alignItems= "flex-start"
         >
-                
                 <ChapterComponent title="Podstawy Javy" data={body.basics} path={paths.basics} />
                 <ChapterComponent title="Metody w Javie" data={body.methods} path={paths.methods} />
                 <ChapterComponent title="Klasy w Javie" data={body.classes} path={paths.classes} />

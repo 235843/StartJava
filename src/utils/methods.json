@@ -25,6 +25,92 @@
                     "codeDescription": "{myMethod()} używany jest do wyświetlenia tekstu."
                 }
             ]
+        },
+        {
+            "page" : [
+                {
+                    "header" : "Parametry i argumenty",
+                    "description": "Informacje można przekazywać do {metod} jako {parametr}. {Parametry} pełnią rolę zmiennych wewnątrz {metody}.\n{Parametry} podaje się po nazwie {metody}, w {nawiasach}. Możesz dodać dowolną liczbę {parametrów}, wystarczy oddzielić je przecinkiem.",
+                    "code": "public class Main {\n  static void myMethod(String name) {\n    System.out.println(\"Nazywam się \" + name);\n  }\n  public static void main(String[] args) {\n    myMethod(\"Jan\");\n    myMethod(\"Krzysztof\");\n    myMethod(\"Adam\");\n  }\n}",
+                    "output": "Nazywam się Jan\nNazywam się Krzysztof\nNazywam się Adam",
+                    "codeDescription": "Kiedy do metody przekazywany jest {parametr}, nazywa się go {argumentem}. Zatem z powyższego przykładu: {name} jest {parametrem}, natomiast Jan, Krzysztof i Adam są {argumentami}."
+                },
+                {
+                    "header" : "Wiele parametrów",
+                    "description": "{Metoda} może mieć tyle {parametrów} ile chcesz.",
+                    "code": "public class Main {\n  static void myMethod(String name, int age) {\n    System.out.println(\"Nazywam się \" + name + \" i mam \" + age + \" lat\");\n  }\n  public static void main(String[] args) {\n    myMethod(\"Jan\", 30);\n  }\n}",
+                    "output": "Nazywam się Jan i mam 30 lat",
+                    "codeDescription": "Podczas pracy z {wieloma parametrami} wywołanie {metody} musi mieć tę samą liczbę {argumentów}, ile jest {parametrów}, a {argumenty} muszą być przekazywane w tej samej kolejności."
+                },
+                {
+                    "header" : "Zwracana wartość",
+                    "description": "Słowo {void} użyte w powyższych przykładach wskazuje, że metoda nie powinna zwracać wartości.\nJeśli chcesz, aby {metoda} zwracała wartość, możesz użyć {prymitywnego} typu danych (takiego jak {int}, {char} itp.) lub zwrócić {obiekt} (na przykład {String}) zamiast {void} i użyć {return} wewnątrz metody:",
+                    "code": "public class Main {\n  static int myMethod(int x) {\n    return x * x;\n  }\n  public static void main(String[] args) {\n    int value = myMethod(5);\n    System.out.println(value);\n  }\n}",
+                    "output": "25",
+                    "codeDescription": ""
+                }
+            ]
+        },
+        {
+            "page" : [
+                {
+                    "header" : "Przeciążenie metody",
+                    "description": "W przypadku {przeciążenia metod} wiele metod może mieć {tę samą nazwę} i {różne parametry}.\nZamiast definiować dwie {metody}, które powinny robić to samo, lepiej {przeciążyć} jedną.",
+                    "code": "static int plusMethod(int x, int y) {\n  return x + y;\n}\n\nstatic double plusMethod(double x, double y) {\n  return x + y;\n}\n\npublic static void main(String[] args) {\n  int myNum1 = plusMethod(8, 5);\n  double myNum2 = plusMethod(4.3, 6.26);\n  System.out.println(\"int: \" + myNum1);\n  System.out.println(\"double: \" + myNum2);\n}",
+                    "output": "int: 13\ndouble: 10.56",
+                    "codeDescription": "Pamiętaj, że wiele {metod} może mieć tę samą nazwę, o ile liczba i/lub typ parametrów są różne."
+                }
+            ]
+        },
+        {
+            "page" : [
+                {
+                    "header" : "Zakres w Javie",
+                    "description": "W Javie {zmienne} są dostępne tylko w regionie, w którym zostały utworzone. Nazywa się to {zakresem}(scope).",
+                    "code": "",
+                    "output": "",
+                    "codeDescription": ""
+                },
+                {
+                    "header" : "Zakres w metodach",
+                    "description": "{Zmienne} zadeklarowane bezpośrednio wewnątrz {metody} są dostępne w dowolnym miejscu {metody}, po linii kodu, w której zostały zadeklarowane:",
+                    "code": "public class Main {\n  public static void main(String[] args) {\n\n    // Tu nie możesz użyć zmiennej x\n\n    int x = 100;\n\n    // Tu możesz użyć zmiennej x\n    System.out.println(x);\n  }\n}",
+                    "output": "100",
+                    "codeDescription": ""
+                },
+                {
+                    "header" : "Zakres w bloku kodu",
+                    "description": "{Blok kodu} odnosi się do całego kodu zawartego w {nawiasach klamrowych}.\n{Zmienne} zadeklarowane wewnątrz {bloków kodu} są dostępne jedynie poprzez kod zawarty w {nawiasach klamrowych}, który następuje po linii, w której {zmienna} została zadeklarowana",
+                    "code": "public class Main {\n  public static void main(String[] args) {\n    // Tu nie możesz użyć zmiennej x\n\n    { // To jest blok kodu\n\n      // Tu nie możesz użyć zmiennej x\n      int x = 100;\n\n      // Tu możesz użyć zmiennej x\n      System.out.println(x);\n\n      } // Tu się kończy blok kodu\n    // Tu nie możesz użyć zmiennej x\n  }\n}",
+                    "output": "100",
+                    "codeDescription": "{Blok kodu} może istnieć samodzielnie lub może należeć do instrukcji {if}, {while} lub {for}. W przypadku instrukcji {for} zmienne zadeklarowane w samej instrukcji są również dostępne w zasięgu bloku"
+                }
+            ]
+        },
+        {
+            "page" : [
+                {
+                    "header" : "",
+                    "description": "",
+                    "code": "",
+                    "output": "",
+                    "codeDescription": ""
+                },
+                {
+                    "header" : "",
+                    "description": "",
+                    "code": "",
+                    "output": "",
+                    "codeDescription": ""
+                },
+                {
+                    "header" : "",
+                    "description": "",
+                    "code": "",
+                    "output": "",
+                    "codeDescription": ""
+                }
+            ]
         }
     ]
 }

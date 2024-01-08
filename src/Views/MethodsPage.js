@@ -30,7 +30,7 @@ export default function MethodsPage() {
       <Flex w='95%'  position= 'absolute' marginLeft="20px" >
         <Sidebar/>
         <Box borderWidth="1px" borderRadius="lg" p="6" m="4" minWidth="80%" >
-          <SwitchPageButtonsComponent path={paths.methods} id={id} />
+          <SwitchPageButtonsComponent path={paths.methods} id={id} pageCount={loadData.methods.length}/>
             {body.page.map(elem  => 
               <>
                 <HeaderComponent title={elem.header} description={elem.description} />

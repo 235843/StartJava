@@ -8,7 +8,7 @@
         "Komentarze",
         "Zmienne",
         "Typy danych",
-        "Rzutowanie zmiennych",
+        "Rzutowanie",
         "Operatory",
         "Klasa String",
         "Klasa Math",
@@ -17,12 +17,16 @@
         "Switch",
         "Pętla while",
         "Pętla for",
-        "Instrukcja break i continue",
+        "Break i continue",
         "Tablice"
 
     ],
     "methods":[
-        "Metody"
+        "Metody",
+        "Parametry metody",
+        "Przeciążenie metody",
+        "Pojęcie zakresu",
+        "Rekurencja"
     ],
     "classes":[
         "Java OOP"

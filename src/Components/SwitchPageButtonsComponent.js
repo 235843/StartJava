@@ -2,10 +2,10 @@ import { Button, Flex, Text } from '@chakra-ui/react'
 import React from 'react'
 import { NavLink } from 'react-router-dom';
 
-export default function SwitchPageButtonsComponent({path, id}) {
+export default function SwitchPageButtonsComponent({path, id, pageCount}) {
   const prevPage = "Poprzednia strona";
   const nextPage = "Następna strona";
-    
+  console.log(pageCount)
   return (
     <Flex justifyContent="space-between">
         {id!==0 && 
@@ -24,8 +24,8 @@ export default function SwitchPageButtonsComponent({path, id}) {
                
             </Button>
         }
-
-        {true && 
+        
+        {id<(pageCount-1) && 
             <Button w="13%" as={NavLink} to={path+"?id="+(id+1)}
                 marginLeft="auto"
                 background= '#ff416c'
