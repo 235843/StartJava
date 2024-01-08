@@ -12,7 +12,7 @@
                 },
                 {
                     "header" : "Tworzenie metody",
-                    "description": "Metoda musi zostać zdefiniowana wewnątrz klasy. Jest ona zdefiniowana za pomocą nazwy metody, po której następują nawiasy {()}. Java zapewnia parę zdefiniowanych metod np. {System.out.println()}. Możesz też samodzielnie stworzyć metody do wykonania określonych działań",
+                    "description": "Metoda musi zostać zdefiniowana wewnątrz klasy. Jest ona zdefiniowana za pomocą nazwy metody, po której następują nawiasy {()}.\nJava zapewnia parę zdefiniowanych metod np. {System.out.println()}. Możesz też samodzielnie stworzyć metody do wykonania określonych działań",
                     "code": "public class Main {\n  static void myMethod() {\n    // code to be executed;\n  }\n}",
                     "output": "",
                     "codeDescription": "{myMethod()} to nazwa metody.\n{static} oznacza, że należy do klasy Main, a nie do obiektu Main. Dowiesz się o tym więcej w dalszych rozdziałach.\n{void} oznacza, że metoda nic nie zwraca. O wartościach zwracanych dowiesz się więcej dalej w tym rozdziale."
@@ -90,11 +90,11 @@
         {
             "page" : [
                 {
-                    "header" : "",
-                    "description": "",
-                    "code": "",
-                    "output": "",
-                    "codeDescription": ""
+                    "header" : "Rekurencja",
+                    "description": "{Rekurencja} to technika wykonywania samego wywołania {funkcji}. Technika ta umożliwia rozbicie skomplikowanych problemów na proste problemy, które są łatwiejsze do rozwiązania.\n{Rekurencja} może być nieco trudna do zrozumienia. Najlepszym sposobem, aby dowiedzieć się, jak to działa, jest poeksperymentowanie z nim.",
+                    "code": "public class Main {\n  public static void main(String[] args) {\n    int result = sum(10);\n    System.out.println(result);\n  }\n  public static int sum(int k) {\n    if (k > 0) {\n      return k + sum(k - 1);\n    } else {\n      return 0;\n    }\n  }\n}",
+                    "output": "55",
+                    "codeDescription": "Po wywołaniu funkcja {sum()} dodaje parametr {k} do sumy wszystkich liczb mniejszych niż {k} i zwraca wynik. Kiedy {k} wynosi 0, funkcja po prostu zwraca 0. {Program} podczas działania wykonuje następujące kroki:\n10 + sum(9)\n10 + (9 + sum(8))...\n10 + 9 + 8 + 7 + 6 + 5 + 4 + 3 + 2 + 1 + 0"
                 },
                 {
                     "header" : "",

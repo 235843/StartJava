@@ -21,6 +21,7 @@ export default function NavItem({  title, active, path }) {
           flexDir="column"
           w="100%"
           alignItems= "flex-start"
+          wrap="wrap"
         >
           <HStack  w="100%">
             <Button w="100%" as={NavLink} to={path}
