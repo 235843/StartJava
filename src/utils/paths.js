@@ -6,7 +6,11 @@ export const paths = {
     methods: "/methods",
     classes: "/classes",
     files: "/fileHandling",
-    tests: "/tests",
+    basicsTest: "/basicTest",
+    methodsTest: "/methodsTest",
+    classesTest: "/classesTest",
+    fileTest: "/fileTest",
+    endTest: "/endTest",
     help: "/help"
   };
 
