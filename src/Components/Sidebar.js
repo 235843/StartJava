@@ -16,6 +16,7 @@ import NavItem from './NavItem'
 import { paths } from '../utils/paths'
 import data from '../utils/chapters.json'
 import ChapterComponent from './ChapterComponent'
+import NavTestComponent from './NavTestComponent'
 
 
 export default function Sidebar() {
@@ -57,6 +58,7 @@ export default function Sidebar() {
                 <ChapterComponent title="Metody w Javie" data={body.methods} path={paths.methods} />
                 <ChapterComponent title="Klasy w Javie" data={body.classes} path={paths.classes} />
                 <ChapterComponent title="Obsługa plików" data={body.files} path={paths.files} />
+                <NavTestComponent />
                 
         </Flex>
 

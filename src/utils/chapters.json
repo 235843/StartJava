@@ -33,5 +33,12 @@
     ],
     "files": [
         "Java pliki"
+    ],
+    "tests" : [
+        "Podstawy Javy",
+        "Metody w Javie",
+        "Klasy w Javie",
+        "Obsługa plików",
+        "Test Końcowy"
     ]
 }

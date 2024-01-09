@@ -3,17 +3,16 @@ import { json, useParams } from 'react-router-dom'
 import data from '../utils/basics.json'
 import Navbar from '../Components/Navbar';
 import Sidebar from '../Components/Sidebar';
-import { Box, Divider, Flex } from '@chakra-ui/react';
+import { Box, Button, Divider, Flex } from '@chakra-ui/react';
 import HeaderComponent from '../Components/HeaderComponent';
 import CodeSampleComponent from '../Components/CodeSampleComponent';
 import OutputComponent from '../Components/OutputComponent';
 import InformationComponent from '../Components/InformationComponent';
+import { baseUrl } from '../utils/paths';
+import QuestionComponent from '../Components/QuestionComponent';
 
-export default function TestsPage(){
-  const {id=0} = useParams();
-
+export default function TestsPage({category}){
   const loadData = JSON.parse(JSON.stringify(data))
-  const body = loadData.basics[id];
 
   return (
     <React.StrictMode>
@@ -22,16 +21,7 @@ export default function TestsPage(){
       <Flex w='95%'  position= 'absolute' marginLeft="20px" >
         <Sidebar/>
         <Box borderWidth="1px" borderRadius="lg" p="6" m="4" minWidth="80%">
-            {body.page.map(elem  => 
-            <>
-                <HeaderComponent title={elem.header} description={elem.description} />
-                <CodeSampleComponent code={elem.code} />
-                <OutputComponent output={elem.output} />
-                <InformationComponent info={elem.codeDescription} />
-
-                <Divider marginTop="10px" mb="8"/>
-            </>
-            )}
+          <QuestionComponent category={category}/>
         </Box>
       </Flex>
     </React.StrictMode>

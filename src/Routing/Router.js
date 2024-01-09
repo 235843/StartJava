@@ -57,12 +57,40 @@ const Router = () => {
           }
           path={paths.files}/>
 
-        <Route element={
-             <Suspense fallback={null}>
-               <TestsPage/>
-             </Suspense>
-           }
-           path={paths.tests}/>
+          <Route element={
+              <Suspense fallback={null}>
+                <TestsPage category="Podstawy Javy"/>
+              </Suspense>
+            }
+            path={paths.basicsTest}/>
+
+            <Route element={
+                <Suspense fallback={null}>
+                  <TestsPage category="Metody w Javie"/>
+                </Suspense>
+              }
+              path={paths.methodsTest}/>
+
+            <Route element={
+                <Suspense fallback={null}>
+                  <TestsPage category="Klasy w Javie"/>
+                </Suspense>
+              }
+              path={paths.classesTest}/>
+            
+            <Route element={
+                <Suspense fallback={null}>
+                  <TestsPage category="Obsługa plików w Javie"/>
+                </Suspense>
+              }
+              path={paths.fileTest}/>
+            
+            <Route element={
+                <Suspense fallback={null}>
+                  <TestsPage category="Test końcowy"/>
+                </Suspense>
+              }
+              path={paths.endTest}/>
 
            <Route element={
               <Suspense fallback={null}>

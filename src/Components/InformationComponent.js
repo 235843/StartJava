@@ -27,7 +27,7 @@ function InformationComponent({info}) {
               return part;
             });
 
-            return <li key={index}>{parts}</li>;
+            return <li style={{marginLeft: "10px"}} key={index}>{parts}</li>;
           })}
         </ul>
         </Box>
