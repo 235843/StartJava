@@ -1,5 +1,5 @@
 import React from 'react'
-import { json, useLocation } from 'react-router-dom'
+import { useLocation } from 'react-router-dom'
 import data from '../utils/basics.json'
 import Navbar from '../Components/Navbar';
 import Sidebar from '../Components/Sidebar';

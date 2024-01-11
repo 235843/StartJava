@@ -1,19 +1,27 @@
 import React from 'react'
-import { json, useParams } from 'react-router-dom'
-import data from '../utils/basics.json'
 import Navbar from '../Components/Navbar';
 import Sidebar from '../Components/Sidebar';
+import { paths } from '../utils/paths';
 import { Box, Button, Divider, Flex } from '@chakra-ui/react';
-import HeaderComponent from '../Components/HeaderComponent';
-import CodeSampleComponent from '../Components/CodeSampleComponent';
-import OutputComponent from '../Components/OutputComponent';
-import InformationComponent from '../Components/InformationComponent';
-import { baseUrl } from '../utils/paths';
 import QuestionComponent from '../Components/QuestionComponent';
+import { Navigate } from 'react-router-dom';
 
 export default function TestsPage({category}){
-  const loadData = JSON.parse(JSON.stringify(data))
+  const authorization = localStorage.getItem('authorization');
+  const role = localStorage.getItem('role');
+  const [redirectTo, setRedirectTo] = React.useState(null);
 
+  React.useEffect(() => {
+    if (!authorization || !role) {
+      setRedirectTo(paths.landingPage);
+    }
+  }, [authorization, role]);
+
+  if (redirectTo) {
+    return <Navigate to={redirectTo} replace />;
+  }
+
+  
   return (
     <React.StrictMode>
       <Navbar/>
