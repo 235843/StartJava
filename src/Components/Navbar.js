@@ -13,6 +13,7 @@ const logout = "Wyloguj"
 
 export default function Navbar() {
   const [authenticated, setAuthenticated] = React.useState(false);
+  const [redirectTo, setRedirectTo] = React.useState("/");
   const toast = useToast();
   const toastIdRef = React.useRef();
 
@@ -24,6 +25,20 @@ export default function Navbar() {
       setAuthenticated(true);
     }
   }, []);
+  
+  const logout = () => {
+    localStorage.removeItem("authorization");
+    localStorage.removeItem("role");
+    localStorage.removeItem("email");
+    setAuthenticated(false);
+    toastIdRef.current = toast({ 
+      title: 'Wylogowano',
+      description: "Wylogowano pomyślnie",
+      status: 'info',
+      duration: 9000,
+      isClosable: true
+    })
+  }
 
   return (
     <chakra.header  id="header"
@@ -60,19 +75,8 @@ export default function Navbar() {
             <MenuList>
               {authenticated ? 
                 <MenuGroup title='Profil'>
-                  <MenuItem> Mój profil</MenuItem>
-                  <MenuItem onClick={() => {
-                    localStorage.removeItem("authorization");
-                    localStorage.removeItem("role");
-                    setAuthenticated(false);
-                    toastIdRef.current = toast({ 
-                      title: 'Wylogowano',
-                      description: "Wylogowano pomyślnie",
-                      status: 'info',
-                      duration: 9000,
-                      isClosable: true
-                     })
-                  }}> Wyloguj </MenuItem>
+                  <MenuItem as={NavLink} to={paths.profile}> Mój profil</MenuItem>
+                  <MenuItem onClick={logout} as={NavLink} to={paths.landingPage}> Wyloguj </MenuItem>
                 </MenuGroup> 
                 :
                 <MenuGroup title='Profil'>

@@ -10,6 +10,8 @@ import ClassesPage from '../Views/ClassesPage'
 import FilePage from '../Views/FilePage'
 import TestsPage from '../Views/TestsPage'
 import HelpPage from '../Views/HelpPage'
+import ProfileComponent from '../Components/ProfileComponent'
+import ProfilePage from '../Views/ProfilePage'
 
 const Router = () => {
   return (
@@ -98,6 +100,13 @@ const Router = () => {
               </Suspense>
             }
             path={paths.help}/>
+            
+           <Route element={
+              <Suspense fallback={null}>
+                <ProfilePage />
+              </Suspense>
+            }
+            path={paths.profile}/>
       </Routes>
     </BrowserRouter>
     </>

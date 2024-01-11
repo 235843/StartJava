@@ -15,6 +15,8 @@ export default function QuestionComponent( {category} ) {
   const [startTime, setStartTime] = React.useState(0)
 
   React.useEffect(() => {
+    setShowResult(false);
+    setResult({})
     setQuestionData({})
     setStartTime(Date.now())
     const fetchQuestion = async () => {
@@ -79,6 +81,7 @@ export default function QuestionComponent( {category} ) {
     ])
     
     if (questionNumber + 1 === questionData.questions.length) {
+        setSelectedAnswer("")
         sendAnswers();
         return;
     }
