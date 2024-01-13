@@ -41,7 +41,7 @@ export default function ProfileComponent() {
       { changePassword  ? (
         <ChangePasswordComponent setChangePassword={setChangePassword}/>
       ) : (
-        <Flex h="0.001vh"/>
+        <Flex h="0vh"/>
       )}
 
       <Stack spacing={6} textAlign="center">

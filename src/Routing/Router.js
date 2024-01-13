@@ -12,6 +12,7 @@ import TestsPage from '../Views/TestsPage'
 import HelpPage from '../Views/HelpPage'
 import ProfileComponent from '../Components/ProfileComponent'
 import ProfilePage from '../Views/ProfilePage'
+import AdminPanel from '../Views/AdminPanel'
 
 const Router = () => {
   return (
@@ -107,6 +108,13 @@ const Router = () => {
               </Suspense>
             }
             path={paths.profile}/>
+
+          <Route element={
+              <Suspense fallback={null}>
+                <AdminPanel />
+              </Suspense>
+            }
+            path={paths.adminPanel}/>
       </Routes>
     </BrowserRouter>
     </>

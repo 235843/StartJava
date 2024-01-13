@@ -94,7 +94,8 @@ function LoginComponent() {
                 const authStr = "Basic" + window.btoa(values.email + ":" + values.password);
 
                 localStorage.setItem("authorization", authStr);
-                localStorage.setItem("role", response.role);
+                localStorage.setItem("email", values.email);
+                localStorage.setItem("role", data.user_role[0].authority)
 
                 console.log('Registration successful:', data);
 

@@ -14,13 +14,14 @@ const logout = "Wyloguj"
 export default function Navbar() {
   const [authenticated, setAuthenticated] = React.useState(false);
   const [redirectTo, setRedirectTo] = React.useState("/");
+  const role = localStorage.getItem('role');
   const toast = useToast();
   const toastIdRef = React.useRef();
 
   
   React.useEffect(() => {
     const authorization = localStorage.getItem('authorization');
-    const role = localStorage.getItem('role');
+    console.log(role);
     if (authorization && role) {
       setAuthenticated(true);
     }
@@ -68,6 +69,13 @@ export default function Navbar() {
         </NavLink>
 		
         <HStack>
+
+          {authenticated && role === "ROLE_ADMIN" ? (
+            <Button colorScheme='gray' as={NavLink} to={paths.adminPanel}>Admin panel</Button> 
+          ) : (
+            <Flex h="0vh"/>
+          )}
+
           <Menu>
             <MenuButton as={Button} color='white' textColor='dark'>
               <Icon  as={FiUser} fontSize="xl" color={"#82AAAD"} />

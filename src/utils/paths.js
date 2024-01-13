@@ -11,7 +11,8 @@ export const paths = {
     classesTest: "/classesTest",
     fileTest: "/fileTest",
     endTest: "/endTest",
-    help: "/help"
+    help: "/help",
+    adminPanel: "/adminPanel"
   };
 
   export const baseUrl = 'http://localhost:8080'
