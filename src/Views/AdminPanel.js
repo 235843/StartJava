@@ -4,6 +4,7 @@ import Sidebar from '../Components/Sidebar'
 import { Box, Flex } from '@chakra-ui/react'
 import { Navigate } from 'react-router-dom';
 import { paths } from '../utils/paths';
+import AdminComponent from '../Components/AdminComponent';
 
 
 export default function AdminPanel() {
@@ -30,7 +31,7 @@ export default function AdminPanel() {
       <Flex w='95%'  position= 'absolute' marginLeft="20px" >
         <Sidebar/>
         <Box borderWidth="1px" borderRadius="lg" p="6" m="4" minWidth="80%" >
-            
+            <AdminComponent />
         </Box>
       </Flex>
     </React.StrictMode>
