@@ -52,19 +52,27 @@ export default function ChangePasswordComponent({setChangePassword}) {
                     'Content-Type': 'application/json',
                 },
                 body: JSON.stringify(values),
-            });
+              });
 
-            if (changePasswordRespone.ok){
-              toastIdRef.current = toast({ 
+              if (changePasswordRespone.ok){
+                toastIdRef.current = toast({ 
                   title: 'Sukces',
                   description: "Pomyślnie zmieniono hasło",
                   status: 'success',
                   duration: 9000,
                   isClosable: true
-              })
-             setChangePassword(false)
+                })
+              setChangePassword(false)
             }
-
+          }
+          else {
+            toastIdRef.current = toast({ 
+              title: 'Błąd',
+              description: "Podano błędne hasło",
+              status: 'error',
+              duration: 2000,
+              isClosable: true
+            })
           } 
       } catch (error) {
           console.error('Error:', error.message);

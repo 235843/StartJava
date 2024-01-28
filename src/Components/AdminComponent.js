@@ -90,7 +90,7 @@ export default function AdminComponent() {
            {userData.users.map((item, index) => (
              <Tr key={index}>
                <Td>{item.email}</Td>
-               <Td>{item.blocked ? (
+               <Td w="45%">{item.blocked ? (
                   "Zablokowane konto"
                 ) : (
                   "Aktywne konto"

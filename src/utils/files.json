@@ -13,11 +13,65 @@
                 {
                     "header": "Obsługa plików w Javie",
                     "description": "Klasa {File} z pakietu {java.io} umożliwia pracę z plikami.\nŻeby korzystać klasy {File} utwórz obiekt klasy określając nazwę pliku lub katalogu.",
-                    "code": "import java.io.File;\n\npublic class Main {\n  public static void main(String[] args) {\n    File myObj = new File(\"filename.txt\");\n  }\n}",
+                    "code": "import java.io.File;\nimport java.io.IOException;\npublic class Main {\n  public static void main(String[] args) {\n    File myObj = new File(\"filename.txt\");\n  }\n}",
                     "output": "",
                     "codeDescription": "Nauczysz się jak utworzyć, zapisać, odczytać lub usunąć plik dalej w tym rozdziale"
                 }
             ]
+        },
+        {
+            "page": [
+                {
+                    "header": "Tworzenie pliku",
+                    "description": "Aby utworzyć plik w Javie, możesz użyć metody {createNewFile()}. Ta metoda zwraca wartość logiczną: {true}, jeśli plik został pomyślnie utworzony, i {false}, jeśli plik już istnieje.\nNależy pamiętać, że metoda jest zawarta w bloku {try...catch}. Jest to konieczne, ponieważ zgłasza wyjątek {IOException} w przypadku wystąpienia błędu (jeśli z jakiegoś powodu nie można utworzyć pliku)",
+                    "code": "import java.io.File;\nimport java.io.IOException;  \n\npublic class CreateFile {\n  public static void main(String[] args) {\n    try {\n      File myObj = new File(\"filename.txt\");\n      if (myObj.createNewFile()) {\n        System.out.println(\"Utworzono plik: \" + myObj.getName());\n      } else {\n        System.out.println(\"Plik już istnieje.\");\n      }\n    } catch (IOException e) {\n      System.out.println(\"Błąd.\");\n      e.printStackTrace();\n    }\n  }\n}",
+                    "output": "Utworzono plik: filename.txt",   
+                    "codeDescription": "Aby utworzyć plik w określonym {katalogu} (wymaga uprawnień), określ ścieżkę pliku i użyj podwójnych ukośników odwrotnych, aby uniknąć znaku {\\} (w systemie Windows).\n{File myObj = new File(\"C:\\\\Users\\\\MyName\\\\filename.txt\");}\nNa komputerach {Mac} i {Linux} możesz po prostu wpisać ścieżkę, na przykład: {/Users/name/filename.txt}"
+                },
+                {
+                    "header": "Zapis do pliku",
+                    "description": "Klasy {FileWriter} używa się wraz z jej metodą {write()} do zapisania tekstu do pliku, który utworzyliśmy wcześniej. Pamiętaj, że kiedy skończysz zapisywanie pliku, powinieneś zamknąć go metodą {close()}.",
+                    "code": "import java.io.FileWriter;\nimport java.io.IOException;  \n\npublic class WriteToFile {\n  public static void main(String[] args) {\n    try {\n      FileWriter myWriter = new FileWriter(\"filename.txt\");\n      myWriter.write(\"Pierwszy zapis do pliku za pomocą Javy!\");\n      myWriter.close();\n      System.out.println(\"Poprawnie zapisano do pliku.\");\n    } catch (IOException e) {\n      System.out.println(\"Błąd.\");\n      e.printStackTrace();\n    }\n  }\n}",
+                    "output": "Poprawnie zapisano do pliku.",
+                    "codeDescription": ""
+                }
+            ]
+        },{
+            "page": [
+                {
+                    "header": "Czytanie z pliku",
+                    "description": "Za pomocą klasy {Scanner} możemy odczytać tekst, który zapisaliśmy w poprzednim rozdziale.",
+                    "code": "import java.io.File;\nimport java.io.FileNotFoundException;\npublic class ReadFile {\n  public static void main(String[] args) {\n    try {\n      File myObj = new File(\"filename.txt\");\n      Scanner myReader = new Scanner(myObj)\n      while (myReader.hasNextLine()) {\n        System.out.println(myReader.nextLine());\n      }\n      myReader.close();\n    } catch (FileNotFoundException e) {\n      System.out.println(\"Błąd\");\n      e.printStackTrace();\n    }\n  }\n}",
+                    "output": "Pierwszy zapis do pliku za pomocą Javy!",
+                    "codeDescription": ""
+                },
+                {
+                    "header": "Informacje o pliku",
+                    "description": "Aby otrzymać więcej informacji o pliku, użyj metod z klasy {File}.",
+                    "code": "import java.io.File;\n\npublic class GetFileInfo { \n  public static void main(String[] args) {\n    File myObj = new File(\"filename.txt\");\n    if (myObj.exists()) {\n      System.out.println(\"Nazwa pliku: \" + myObj.getName());\n      System.out.println(\"Pełna ścieżka: \" + myObj.getAbsolutePath());\n      System.out.println(\"Czy można zapisać: \" + myObj.canWrite());\n      System.out.println(\"Czy można odczytać: \" + myObj.canRead());\n      System.out.println(\"Rozmiar pliku w bajtach: \" + myObj.length());\n    } else {\n      System.out.println(\"Plik nie istnieje.\");\n    }\n  }\n}",
+                    "output": "Nazwa pliku: filename.txt\nPełna ścieżka: C:\\Users\\MyName\\filename.txt\nCzy można zapisać: true\nCzy można odczytać: false\nRozmiar pliku w bajtach: 0",
+                    "codeDescription": "W API języka Java dostępnych jest wiele klas, których można używać do {odczytu} i {zapisu} plików w języku Java: {FileReader}, {BufferedReader}, {Files}, {Scanner}, {FileInputStream}, {FileWriter}, {BufferedWriter}, {FileOutputStream} itp. \nWybór z nich zależy od używanej wersji Java, czy musisz czytać {bajty} czy {znaki}, a także rozmiar pliku lub linii itp."
+                }
+            ]
+        },
+        {
+            "page": [
+                {
+                    "header": "Usuwanie pliku",
+                    "description": "Aby usunąć plik za pomocą Javy użyj metody {delete()}.",
+                    "code": "import java.io.File;\n\npublic class DeleteFile {\n  public static void main(String[] args) {\n    File myObj = new File(\"filename.txt\");\n     if (myObj.delete()) {\n      System.out.println(\"Usunięto plik: \" + myObj.getName());\n    } else {\n      System.out.println(\"Nie udało się usunąć pliku\");\n    }\n  }\n}",
+                    "output": "Usunięto plik: filename.txt",
+                    "codeDescription": ""
+                },
+                {
+                    "header": "",
+                    "description": "",
+                    "code": "import java.io.File;\n\npublic class DeleteFolder {\n  public static void main(String[] args) {\n    File myObj = new File(\"C:\\\\Users\\\\MyName\\\\Test\");\n     if (myObj.delete()) {\n      System.out.println(\"Usunięto katalog: \" + myObj.getName());\n    } else {\n      System.out.println(\"Nie udało się usunąć katalogu\");\n    }\n  }\n}",
+                    "output": "Usunięto katalog: Test",
+                    "codeDescription": ""
+                }
+            ]
         }
+        
     ]
 }
