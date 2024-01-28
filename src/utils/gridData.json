@@ -1,0 +1,237 @@
+{
+    "data": [
+        {
+            "headers": [
+                "Typ",
+                "Rozmiar",
+                "Opis"
+            ],
+            "body": [
+                {
+                    "col1": "byte",
+                    "col2": "1 bajt",
+                    "col3": "Przechowuje liczby od -128 do 127"
+                },
+                {
+                    "col1": "short",
+                    "col2": "2 bajty",
+                    "col3": "Przechowuje liczby od 32,768 do 32,767"
+                },
+                {
+                    "col1": "int",
+                    "col2": "4 bajty",
+                    "col3": "Przechowuje liczby od -2,147,483,648 do 2,147,483,647"
+                },
+                {
+                    "col1": "long",
+                    "col2": "8 bajtów",
+                    "col3": "Przechowuje liczby od -9,223,372,036,854,775,808 do 9,223,372,036,854,775,807"
+                },
+                {
+                    "col1": "float",
+                    "col2": "4 bajty",
+                    "col3": "Przechowuje liczby ułamkowe. Wystarczający do przechowywania od 6 do 7 cyfr dziesiętnych"
+                },
+                {
+                    "col1": "double",
+                    "col2": "8 bajtów",
+                    "col3": "Przechowuje liczby ułamkowe. Wystarczający do przechowywania 15 cyfr dziesiętnych"
+                },
+                {
+                    "col1": "boolean",
+                    "col2": "1 bajt",
+                    "col3": "Przechowuje true lub false"
+                },
+                {
+                    "col1": "char",
+                    "col2": "2 bajty",
+                    "col3": "Przechowuje pojedynczy znak/literę lub wartość ASCII"
+                }
+            ]
+        },
+        {
+            "headers": [
+                "Operator",
+                "Nazwa",
+                "Opis",
+                "Przykład"
+            ],
+            "body": [
+                {
+                    "col1": "+",
+                    "col2": "Dodawanie",
+                    "col3": "Dodaje dwie wartości do siebie",
+                    "col4": "x + y"
+                },
+                {
+                    "col1": "-",
+                    "col2": "Odejmowanie",
+                    "col3": "Odejmuje jedną wartość od drugiej",
+                    "col4": "x - y"
+                },
+                {
+                    "col1": "*",
+                    "col2": "Mnożenie",
+                    "col3": "Mnoży dwie wartości ze sobą",
+                    "col4": "x * y"
+                },
+                {
+                    "col1": "/",
+                    "col2": "Dzieli",
+                    "col3": "Dzieli jedną wartość przez drugą",
+                    "col4": "x / y"
+                },
+                {
+                    "col1": "%",
+                    "col2": "Modulo",
+                    "col3": "Zwraca resztę z dzielenia",
+                    "col4": "x % y"
+                },
+                {
+                    "col1": "++",
+                    "col2": "Inkrementacja",
+                    "col3": "Zwiększa wartość zmiennej o 1",
+                    "col4": "x++"
+                },
+                {
+                    "col1": "--",
+                    "col2": "Dekrementaca",
+                    "col3": "Zmniejsza wartość zmiennej o 1",
+                    "col4": "x--"
+                }
+                
+            ]
+        },
+        {
+            "headers": [
+                "Operator",
+                "Przykład",
+                "Taki sam jak"
+            ],
+            "body": [
+                {
+                    "col1": "=",
+                    "col2": "x = 5",
+                    "col3": "x = 5"
+                },
+                {
+                    "col1": "+=",
+                    "col2": "x += 3",
+                    "col3": "x = x + 3"
+                },
+                {
+                    "col1": "-=",
+                    "col2": "x -= 3",
+                    "col3": "x = x - 3"
+                },
+                {
+                    "col1": "*=",
+                    "col2": "x *= 3",
+                    "col3": "x = x * 3"
+                },
+                {
+                    "col1": "/=",
+                    "col2": "x /= 3",
+                    "col3": "x = x / 3"
+                },
+                {
+                    "col1": "%=",
+                    "col2": "x %= 3",
+                    "col3": "x = x % 3"
+                },
+                {
+                    "col1": "&=",
+                    "col2": "x &= 3",
+                    "col3": "x = x & 3"
+                },
+                {
+                    "col1": "|=",
+                    "col2": "x |= 3",
+                    "col3": "x = x | 3"
+                },
+                {
+                    "col1": "^=",
+                    "col2": "x ^= 3",
+                    "col3": "x = x ^ 3"
+                },
+                {
+                    "col1": ">>=",
+                    "col2": "x >>= 3",
+                    "col3": "x = x >> 3"
+                },
+                {
+                    "col1": "<<=",
+                    "col2": "x <<= 3",
+                    "col3": "x = x << 3"
+                }
+            ]
+        },
+        {
+            "headers": [
+                "Operator",
+                "Nazwa",
+                "Przykład"
+            ],
+            "body": [
+                {
+                    "col1": "==",
+                    "col2": "Równy",
+                    "col3": "x == y"
+                },
+                {
+                    "col1": "!=",
+                    "col2": "Nie równy",
+                    "col3": "x != y"
+                },
+                {
+                    "col1": ">",
+                    "col2": "Większy",
+                    "col3": "x > y"
+                },
+                {
+                    "col1": "<",
+                    "col2": "Mniejszy",
+                    "col3": "x < y"
+                },
+                {
+                    "col1": ">=",
+                    "col2": "Większy lub równy",
+                    "col3": "x >= y"
+                },
+                {
+                    "col1": "<=",
+                    "col2": "Mniejszy lub równy",
+                    "col3": "x <= y"
+                }
+            ]
+        },
+        {
+            "headers": [
+                "Operator",
+                "Nazwa",
+                "Opis",
+                "Przykład"
+            ],
+            "body": [
+                {
+                    "col1": "&&",
+                    "col2": "Logiczne oraz",
+                    "col3": "Zwraca true jeśli oba warunki są prawdziwe",
+                    "col4": "x < 5 && x < 10"
+                },
+                {
+                    "col1": "||",
+                    "col2": "Logiczne lub",
+                    "col3": "Zwraca true jeśli jeden z warunków jest prawdziwy",
+                    "col4": "x < 5 || x < 10"
+                },
+                {
+                    "col1": "!",
+                    "col2": "Logiczne zaprzeczenie",
+                    "col3": "Odwraca wynik, zwraca false, jeśli wynik jest prawdziwy",
+                    "col4": "!(x < 5 && x < 10)"
+                }
+            ]
+        }
+    ]
+}
