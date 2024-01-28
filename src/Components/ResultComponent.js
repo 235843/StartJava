@@ -6,8 +6,6 @@ import { Button, Flex, Heading, Stack, Text } from '@chakra-ui/react';
 export default function ResultComponent({category, result, time}) {
   const [redirectTo, setRedirectTo] = React.useState(null);
 
-  
-
   function formatTime(seconds) {
     const minutes = Math.floor(seconds / 60);
     const remainingSeconds = seconds % 60;

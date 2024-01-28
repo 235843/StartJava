@@ -13,17 +13,33 @@ const logout = "Wyloguj"
 
 export default function Navbar() {
   const [authenticated, setAuthenticated] = React.useState(false);
+  const [redirectTo, setRedirectTo] = React.useState("/");
+  const role = localStorage.getItem('role');
   const toast = useToast();
   const toastIdRef = React.useRef();
 
   
   React.useEffect(() => {
     const authorization = localStorage.getItem('authorization');
-    const role = localStorage.getItem('role');
+    console.log(role);
     if (authorization && role) {
       setAuthenticated(true);
     }
   }, []);
+  
+  const logout = () => {
+    localStorage.removeItem("authorization");
+    localStorage.removeItem("role");
+    localStorage.removeItem("email");
+    setAuthenticated(false);
+    toastIdRef.current = toast({ 
+      title: 'Wylogowano',
+      description: "Wylogowano pomyślnie",
+      status: 'info',
+      duration: 9000,
+      isClosable: true
+    })
+  }
 
   return (
     <chakra.header  id="header"
@@ -53,6 +69,13 @@ export default function Navbar() {
         </NavLink>
 		
         <HStack>
+
+          {authenticated && role === "ROLE_ADMIN" ? (
+            <Button colorScheme='gray' as={NavLink} to={paths.adminPanel}>Admin panel</Button> 
+          ) : (
+            <Flex h="0vh"/>
+          )}
+
           <Menu>
             <MenuButton as={Button} color='white' textColor='dark'>
               <Icon  as={FiUser} fontSize="xl" color={"#82AAAD"} />
@@ -60,19 +83,8 @@ export default function Navbar() {
             <MenuList>
               {authenticated ? 
                 <MenuGroup title='Profil'>
-                  <MenuItem> Mój profil</MenuItem>
-                  <MenuItem onClick={() => {
-                    localStorage.removeItem("authorization");
-                    localStorage.removeItem("role");
-                    setAuthenticated(false);
-                    toastIdRef.current = toast({ 
-                      title: 'Wylogowano',
-                      description: "Wylogowano pomyślnie",
-                      status: 'info',
-                      duration: 9000,
-                      isClosable: true
-                     })
-                  }}> Wyloguj </MenuItem>
+                  <MenuItem as={NavLink} to={paths.profile}> Mój profil</MenuItem>
+                  <MenuItem onClick={logout} as={NavLink} to={paths.landingPage}> Wyloguj </MenuItem>
                 </MenuGroup> 
                 :
                 <MenuGroup title='Profil'>

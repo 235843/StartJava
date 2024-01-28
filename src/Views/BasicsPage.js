@@ -1,15 +1,17 @@
 import React from 'react'
-import { json, useLocation } from 'react-router-dom'
+import { useLocation } from 'react-router-dom'
 import data from '../utils/basics.json'
 import Navbar from '../Components/Navbar';
 import Sidebar from '../Components/Sidebar';
-import { Box, Divider, Flex } from '@chakra-ui/react';
+import { Box, Divider, Flex, Text } from '@chakra-ui/react';
 import HeaderComponent from '../Components/HeaderComponent';
 import CodeSampleComponent from '../Components/CodeSampleComponent';
 import OutputComponent from '../Components/OutputComponent';
 import InformationComponent from '../Components/InformationComponent';
 import { paths } from '../utils/paths';
 import SwitchPageButtonsComponent from '../Components/SwitchPageButtonsComponent';
+import GridComponent from '../Components/GridComponent';
+import grid from '../utils/gridData.json'
 
 export default function BasicsPage(){
   const location = useLocation();
@@ -21,6 +23,7 @@ export default function BasicsPage(){
   }
   let id = parseInt(urlId, 10);
 
+  const gridData = JSON.parse(JSON.stringify(grid))
   const loadData = JSON.parse(JSON.stringify(data))
   if (id >= loadData.basics.length || id < 0) {
     id = 0;
@@ -41,6 +44,11 @@ export default function BasicsPage(){
                 <CodeSampleComponent code={elem.code} />
                 <OutputComponent output={elem.output} />
                 <InformationComponent info={elem.codeDescription} />
+                {elem.grid > -1 ? (
+                  <GridComponent data={gridData.data[elem.grid]} />
+                ) : (
+                  <Flex h="0vh" w="0%" />
+                )}
 
                 <Divider marginTop="10px" mb="8"/>
               </>

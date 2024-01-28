@@ -176,14 +176,8 @@
                     "description": "Typy danych dzielą się na dwie grupy:\n  -{Pierwotne} typy danych — obejmują {byte}, {short}, {int}, {long}, {float}, {double}, {boolean} i {char}\n  -{Nieprymitywne} typy danych - takie jak {String}, {Arrays} i {Classes} (dowiesz się o nich więcej w późniejszym rozdziale)\nJak wyjaśniono w poprzednim rozdziale, zmienna w Javie musi mieć określony typ danych:",
                     "code": "int myNum = 5;               // Integer (whole number)\nfloat myFloatNum = 5.99f;    // Floating point number\nchar myLetter = 'D';         // Character\nboolean myBool = true;       // Boolean\nString myText = \"Hello\";     // String",
                     "output": "",
-                    "codeDescription": ""
-                },
-                {
-                    "header": "",
-                    "description": "",
-                    "code": "",
-                    "output": "",
-                    "codeDescription": "Tutaj jeszcze tabelka z typami prymitywnymi"
+                    "codeDescription": "",
+                    "grid": 0
                 },
                 {
                     "header": "Nieprymitywne typy danych",
@@ -234,28 +228,32 @@
                     "description": "Operatory arytmetyczne służą do wykonywania typowych operacji matematycznych.",
                     "code": "",
                     "output": "",
-                    "codeDescription": "Tu tabelka"
+                    "codeDescription": "",
+                    "grid": 1
                 },
                 {
                     "header": "Operatory przypisanie",
                     "description": "Operatory przypisania służą do przypisywania wartości zmiennym.",
                     "code": "int x = 10;\nx += 5\nSystem.out.println(x)\n",
                     "output": "15",
-                    "codeDescription": "tu jeszcze tabelka"
+                    "codeDescription": "",
+                    "grid": 2
                 },
                 {
                     "header": "Operatory porównania",
                     "description": "Operatory porównania służą do porównywania dwóch wartości (lub zmiennych). Jest to ważne w programowaniu, ponieważ pomaga nam znajdować odpowiedzi i podejmować decyzje.\nWartość zwracana przez porównanie to {true} lub {false}. Wartości te nazywane są wartościami boolowskimi i dowiesz się o nich więcej w rozdziale {Boolean} i {If..Else}.",
                     "code": "",
                     "output": "",
-                    "codeDescription": "tu też"
+                    "codeDescription": "",
+                    "grid": 3
                 },
                 {
                     "header": "Operatory logiczne",
                     "description": "Można także testować wartości prawdziwe lub fałszywe za pomocą operatorów logicznych.\nOperatory logiczne służą do określenia logiki pomiędzy zmiennymi lub wartościami:",
                     "code": "",
                     "output": "",
-                    "codeDescription": "tabelka"
+                    "codeDescription": "",
+                    "grid": 4
                 }
                 
             ]

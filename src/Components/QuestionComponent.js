@@ -2,6 +2,8 @@ import React from 'react'
 import { baseUrl } from '../utils/paths';
 import { Button, Flex, Heading, Radio, RadioGroup, Stack, Text } from '@chakra-ui/react';
 import ResultComponent from './ResultComponent';
+import { Navigate } from 'react-router-dom';
+import { paths } from '../utils/paths';
 
 export default function QuestionComponent( {category} ) {
   const [questionData, setQuestionData] = React.useState({});
@@ -12,9 +14,10 @@ export default function QuestionComponent( {category} ) {
   const [result, setResult] = React.useState(null)
   const [startTime, setStartTime] = React.useState(0)
 
-
   React.useEffect(() => {
-    setQuestionData({});
+    setShowResult(false);
+    setResult({})
+    setQuestionData({})
     setStartTime(Date.now())
     const fetchQuestion = async () => {
       try {
@@ -31,7 +34,8 @@ export default function QuestionComponent( {category} ) {
           const responseData = await response.json();
           setQuestionData(responseData);
         } else {
-          // Handle error scenario
+          
+          
         }
       } catch (error) {
         console.error('Error fetching question:', error);
@@ -77,6 +81,7 @@ export default function QuestionComponent( {category} ) {
     ])
     
     if (questionNumber + 1 === questionData.questions.length) {
+        setSelectedAnswer("")
         sendAnswers();
         return;
     }

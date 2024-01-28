@@ -29,10 +29,28 @@
         "Rekurencja"
     ],
     "classes":[
-        "Java OOP"
+        "Java OOP",
+        "Klasy i obiekty",
+        "Atrybuty klasy",
+        "Metody w klasie",
+        "Konstruktory",
+        "Modyfikatory",
+        "Enkapsulacja",
+        "Pakiety",
+        "Dziedziczenie",
+        "Polimorfizm",
+        "Zagnieżdżone klasy",
+        "Abstrakcje",
+        "Interfejsy",
+        "Typ Enum"
+
+
     ],
     "files": [
-        "Java pliki"
+        "Java pliki",
+        "Tworzenie i zapis w pliku",
+        "Czytanie z pliku",
+        "Usuwanie pliku"
     ],
     "tests" : [
         "Podstawy Javy",
